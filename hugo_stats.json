@@ -25,7 +25,10 @@
     ],
     "classes": [
       "active",
-      "ancestor"
+      "ancestor",
+      "font-bold",
+      "text-3xl",
+      "underline"
     ],
     "ids": null
   }

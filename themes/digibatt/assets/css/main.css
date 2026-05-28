@@ -2,6 +2,10 @@
 @import "components/header.css";
 @import "components/footer.css";
 
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@source "hugo_stats.json";
+
 :root {
   --accent-primary: #12A537;
   --accent-secondary: #0A6E7A;
