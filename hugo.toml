@@ -4,6 +4,27 @@ title = 'DigiBatt Hub'
 theme = 'digibatt'
 
 
+[menus]
+  [[menus.main]]
+    name = 'About'
+    pageRef = '/about'
+    weight = 10
+
+  [[menus.main]]
+    name = 'Contact'
+    pageRef = '/contact'
+    weight = 20
+
+  [[menus.main]]
+    name = 'Search'
+    pageRef = '/tags'
+    weight = 30
+
+  [[menus.main]]
+    name = 'Submit'
+    pageRef = '/submit'
+    weight = 40
+
 
 
 
@@ -24,3 +45,6 @@ theme = 'digibatt'
     disableWatch = true
     source = 'hugo_stats.json'
     target = 'assets/notwatching/hugo_stats.json'
+  [module.hugoVersion]
+    extended = false
+    min = '0.146.0'
