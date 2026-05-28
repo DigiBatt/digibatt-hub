@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://digibatt.org/schemas/software.json",
+  "title": "Software Record",
+  "description": "A software tool relevant to battery modelling or data",
+  "type": "object",
+  "required": ["title", "description"],
+  "additionalProperties": false,
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Name of the software"
+    },
+    "description": {
+      "type": "string",
+      "description": "Brief description of what the software does"
+    },
+    "repo": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL to the source code repository or project homepage"
+    },
+    "language": {
+      "type": "string",
+      "description": "Primary programming language(s), e.g. Python, MATLAB, Julia"
+    },
+    "license": {
+      "type": "string",
+      "description": "SPDX licence identifier, e.g. MIT, GPL-3.0, Apache-2.0"
+    },
+    "authors": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "List of author names"
+    },
+    "version": {
+      "type": "string",
+      "description": "Current stable version, e.g. 1.2.3"
+    },
+    "body": {
+      "type": "string",
+      "description": "Optional additional markdown content for the record page"
+    }
+  }
+}

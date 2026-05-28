@@ -1,2 +1,75 @@
-<h1>{{ site.Title }}</h1>
-{{ partial "menu.html" (dict "menuID" "main" "page" .) }}
+{{- $page := . -}}
+<nav class="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6">
+    <div class="flex items-center justify-between h-16">
+
+      <!-- Logo + site title -->
+      <a href="/" class="flex items-center gap-2 shrink-0 no-underline">
+        <img src="/digibatt_favicon.png" alt="DigiBatt" class="h-8 w-auto">
+        <span class="font-semibold text-base text-gray-900 hidden sm:block">{{ site.Title }}</span>
+      </a>
+
+      <!-- Desktop nav -->
+      <div class="hidden lg:flex items-center gap-1">
+        {{- range site.Menus.main }}
+          {{- $isActive := $page.IsMenuCurrent .Menu . }}
+          <a href="{{ .URL }}"
+             class="px-3 py-1.5 text-sm font-medium rounded-md transition-colors no-underline {{ if $isActive }}text-primary border-b-2 border-primary{{ else }}text-gray-600 hover:text-gray-900 hover:bg-gray-50{{ end }}"
+             {{ if $isActive }}aria-current="page"{{ end }}
+             {{ if strings.HasPrefix .URL "http" }}target="_blank" rel="noopener"{{ end }}>
+            {{ .Name }}
+          </a>
+        {{- end }}
+      </div>
+
+      <!-- Search + hamburger -->
+      <div class="flex items-center gap-2">
+
+        <!-- Desktop search -->
+        <div class="relative hidden sm:block">
+          <input id="search-input" type="search" placeholder="Search…" autocomplete="off"
+                 class="w-44 pl-8 pr-3 py-1.5 text-sm border border-gray-300 rounded-full bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all focus:w-56">
+          <svg class="absolute left-2.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+          </svg>
+          <div id="search-results" class="hidden absolute right-0 top-full mt-2 w-80 bg-white rounded-lg shadow-lg border border-gray-200 z-50 overflow-hidden max-h-96 overflow-y-auto">
+          </div>
+        </div>
+
+        <!-- Hamburger (mobile / tablet) -->
+        <button id="menu-toggle" class="lg:hidden p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-100 transition-colors" aria-label="Toggle menu" aria-expanded="false">
+          <svg id="menu-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+          <svg id="close-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+
+      </div>
+    </div>
+
+    <!-- Mobile / tablet menu -->
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-gray-100 py-2">
+      {{- range site.Menus.main }}
+        <a href="{{ .URL }}"
+           class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900 no-underline"
+           {{ if strings.HasPrefix .URL "http" }}target="_blank" rel="noopener"{{ end }}>
+          {{ .Name }}
+        </a>
+      {{- end }}
+      <!-- Mobile search -->
+      <div class="px-4 py-2 relative">
+        <input id="search-input-mobile" type="search" placeholder="Search…" autocomplete="off"
+               class="w-full pl-8 pr-3 py-2 text-sm border border-gray-300 rounded-full bg-gray-50 focus:outline-none focus:ring-2 focus:ring-primary">
+        <svg class="absolute left-6.5 top-1/2 -translate-y-1/2 w-3.5 h-3.5 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+        </svg>
+        <div id="search-results-mobile" class="hidden absolute left-4 right-4 top-full mt-1 bg-white rounded-lg shadow-lg border border-gray-200 z-50 overflow-hidden max-h-64 overflow-y-auto">
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>
+

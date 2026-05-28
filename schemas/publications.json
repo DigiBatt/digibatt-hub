@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://digibatt.org/schemas/publications.json",
+  "title": "Publication Record",
+  "description": "A research publication related to battery modelling or data",
+  "type": "object",
+  "required": ["title"],
+  "additionalProperties": false,
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Full title of the publication"
+    },
+    "description": {
+      "type": "string",
+      "description": "Abstract or brief summary"
+    },
+    "authors": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "List of author names"
+    },
+    "doi": {
+      "type": "string",
+      "description": "Digital Object Identifier, e.g. 10.1000/xyz123"
+    },
+    "year": {
+      "type": ["integer", "string"],
+      "description": "Publication year"
+    },
+    "journal": {
+      "type": "string",
+      "description": "Journal or conference name"
+    },
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL to the full text or landing page"
+    },
+    "body": {
+      "type": "string",
+      "description": "Optional additional markdown content for the record page"
+    }
+  }
+}

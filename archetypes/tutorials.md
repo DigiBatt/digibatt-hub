@@ -2,11 +2,11 @@
 date = '{{ .Date }}'
 draft = false
 title = '{{ replace .File.ContentBaseName "-" " " | title }}'
-type = 'publications'
+type = 'tutorials'
 description = ''
-authors = []
-doi = ''
-year = ''
-journal = ''
 url = ''
+authors = []
+level = ''
+language = ''
+format = ''
 +++
