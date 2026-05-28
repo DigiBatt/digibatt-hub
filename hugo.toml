@@ -5,28 +5,31 @@ theme = 'digibatt'
 
 
 [menus]
+
+  [[menus.main]]
+    name = 'Home'
+    pageRef = '/'
+    weight = 5
+
   [[menus.main]]
     name = 'About'
-    pageRef = '/about'
+    pageRef = '/pages/about'
     weight = 10
 
   [[menus.main]]
     name = 'Contact'
-    pageRef = '/contact'
+    pageRef = '/pages/contact'
     weight = 20
 
   [[menus.main]]
     name = 'Search'
-    pageRef = '/tags'
+    pageRef = '/pages/search'
     weight = 30
 
   [[menus.main]]
     name = 'Submit'
-    pageRef = '/submit'
+    pageRef = '/pages/submit'
     weight = 40
-
-
-
 
 [build]
   [build.buildStats]
@@ -37,14 +40,22 @@ theme = 'digibatt'
   [[build.cachebusters]]
     source = '(postcss|tailwind)\.config\.js'
     target = 'css'
+
+
 [module]
+  [[module.mounts]]
+    source = 'content'
+    target = 'content'
+
   [[module.mounts]]
     source = 'assets'
     target = 'assets'
+
   [[module.mounts]]
     disableWatch = true
     source = 'hugo_stats.json'
     target = 'assets/notwatching/hugo_stats.json'
+
   [module.hugoVersion]
     extended = false
     min = '0.146.0'
