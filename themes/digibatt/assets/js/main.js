@@ -79,11 +79,16 @@ function setupSearch(inputId, resultsId) {
     }
   });
 
-  // Close on Escape
+  // Keyboard navigation
   input.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       results.classList.add('hidden');
       input.blur();
+    } else if (e.key === 'Enter') {
+      const first = results.querySelector('a');
+      if (first) {
+        window.location.href = first.href;
+      }
     }
   });
 }
