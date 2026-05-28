@@ -1,6 +1,9 @@
-baseURL = 'https://example.org/'
-locale = 'en-US'
-title = 'My New Hugo Project'
+baseURL = 'https://digibatt.org/'
+locale = 'en-uk'
+title = 'DigiBatt Hub'
+theme = 'digibatt'
+favicon = "static/digibatt_favicon.png" 
+
 
 [menus]
   [[menus.main]]
