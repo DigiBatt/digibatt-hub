@@ -26,9 +26,24 @@
     "classes": [
       "active",
       "ancestor",
+      "bg-white",
+      "border-gray-200",
+      "border-t",
+      "flex",
       "font-bold",
+      "h-12",
+      "items-center",
+      "justify-between",
+      "max-w-5xl",
+      "mt-8",
+      "mx-auto",
+      "px-6",
+      "py-4",
       "text-3xl",
-      "underline"
+      "text-gray-600",
+      "text-sm",
+      "underline",
+      "w-auto"
     ],
     "ids": null
   }
