@@ -22,7 +22,7 @@ let fuse = null;
 async function loadSearchIndex() {
   if (fuse) return;
   try {
-    const resp = await fetch('/search-index.json');
+    const resp = await fetch('/index.json');
     if (!resp.ok) return;
     const data = await resp.json();
     fuse = new Fuse(data, {
