@@ -6,6 +6,13 @@
 @plugin "@tailwindcss/typography";
 @source "hugo_stats.json";
 
+@theme {
+  --color-primary: #12A537;
+  --color-secondary: #0A6E7A;
+  --color-bg: #EDF6EE;
+  --color-text: #0F172A;
+}
+
 :root {
   --accent-primary: #12A537;
   --accent-secondary: #0A6E7A;
@@ -20,9 +27,8 @@
 body {
   color: var(--text-color);
   background-color: var(--bg-color);
-  font-family: sans-serif;
-  line-height: 1.6;
   font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
   margin: 0;
   padding: 0;
 }
@@ -37,12 +43,6 @@ a:hover {
   text-decoration: underline;
 }
 
-main {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 2rem 1.5rem;
-}
-
 h1, h2, h3, h4, h5, h6 {
   color: var(--text-color);
   line-height: 1.2;
@@ -54,10 +54,6 @@ h1, h2, h3, h4, h5, h6 {
 h1 { font-size: 2rem; }
 h2 { font-size: 1.5rem; }
 h3 { font-size: 1.25rem; }
-
-p {
-  margin: 0 0 1rem;
-}
 
 button, .btn {
   background-color: var(--accent-primary);

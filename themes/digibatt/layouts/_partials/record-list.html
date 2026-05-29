@@ -1,0 +1,48 @@
+{{- /*
+Renders the list page for any record section.
+Call as: {{ partial "record-list.html" . }}
+*/}}
+<div>
+  <div class="mb-8">
+    <h1 class="text-3xl font-bold text-gray-900 mb-2">{{ .Title }}</h1>
+    {{ with .Params.description }}
+      <p class="text-gray-600 text-lg">{{ . }}</p>
+    {{ end }}
+    {{ with .Content }}
+      <div class="prose mt-4">{{ . }}</div>
+    {{ end }}
+  </div>
+
+  {{ $pages := where .Pages "Params.draft" "ne" true }}
+  {{ if .Pages }}
+    <div class="flex flex-col gap-4">
+      {{ range .Pages }}
+        <article class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow duration-200">
+          <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
+            <div class="flex-1 min-w-0">
+              <h2 class="text-xl font-semibold text-gray-900 mb-1">{{ .Title }}</h2>
+              {{ with .Params.description }}
+                <p class="text-gray-600 text-sm leading-relaxed">{{ . }}</p>
+              {{ end }}
+            </div>
+            <a href="{{ .RelPermalink }}"
+               class="shrink-0 inline-flex items-center gap-1 text-sm font-medium text-primary hover:text-secondary no-underline hover:underline">
+              View
+              <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+      {{ end }}
+    </div>
+  {{ else }}
+    <div class="text-center py-16 text-gray-500">
+      <p class="text-lg mb-2">No records yet.</p>
+      <a href="https://github.com/FrancescaWatson/digibatt-hub-hugo/issues/new/choose"
+         class="text-primary hover:underline font-medium" target="_blank" rel="noopener">
+        Submit one →
+      </a>
+    </div>
+  {{ end }}
+</div>

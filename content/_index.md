@@ -1,8 +1,4 @@
 +++
 title = 'DigiBatt Hub'
+tagline = 'A curated hub for open battery modelling resources — software, datasets, publications, databases and tutorials.'
 +++
-
-
-Here is the main front page of the DigiBatt Hub
-
-[View Software](/software/)

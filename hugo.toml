@@ -3,33 +3,50 @@ locale = 'en-uk'
 title = 'DigiBatt Hub'
 theme = 'digibatt'
 
+[outputs]
+  home = ['HTML', 'JSON']
 
 [menus]
 
   [[menus.main]]
-    name = 'Home'
-    pageRef = '/'
-    weight = 5
+    name = 'Software'
+    pageRef = '/software'
+    weight = 10
+
+  [[menus.main]]
+    name = 'Publications'
+    pageRef = '/publications'
+    weight = 20
+
+  [[menus.main]]
+    name = 'Datasets'
+    pageRef = '/datasets'
+    weight = 30
+
+  [[menus.main]]
+    name = 'Databases'
+    pageRef = '/databases'
+    weight = 40
+
+  [[menus.main]]
+    name = 'Tutorials'
+    pageRef = '/tutorials'
+    weight = 50
 
   [[menus.main]]
     name = 'About'
     pageRef = '/pages/about'
-    weight = 10
+    weight = 60
 
   [[menus.main]]
     name = 'Contact'
     pageRef = '/pages/contact'
-    weight = 20
-
-  [[menus.main]]
-    name = 'Search'
-    pageRef = '/pages/search'
-    weight = 30
+    weight = 70
 
   [[menus.main]]
     name = 'Submit'
-    pageRef = '/pages/submit'
-    weight = 40
+    url = 'https://github.com/FrancescaWatson/digibatt-hub-hugo/issues/new/choose'
+    weight = 80
 
 [build]
   [build.buildStats]

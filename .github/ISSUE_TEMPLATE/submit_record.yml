@@ -1,0 +1,60 @@
+name: Submit a Record
+description: >
+  Submit a new resource to the DigiBatt Hub. Accepted types: software,
+  publication, dataset, database, tutorial.
+title: "[SUBMIT] "
+labels: ["submission"]
+body:
+
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for contributing to the DigiBatt Hub! Please fill in the fields below.
+        JSON schemas for each record type are in the
+        [`schemas/`](https://github.com/FrancescaWatson/digibatt-hub-hugo/tree/main/schemas)
+        directory — validate your JSON against the relevant schema before submitting.
+
+  - type: dropdown
+    id: record-type
+    attributes:
+      label: Record Type
+      description: Which category does this resource belong to?
+      options:
+        - software
+        - publication
+        - dataset
+        - database
+        - tutorial
+    validations:
+      required: true
+
+  - type: textarea
+    id: json-record
+    attributes:
+      label: JSON Record
+      description: >
+        Paste the complete JSON object for your record. See the schema for the
+        selected type at https://github.com/FrancescaWatson/digibatt-hub-hugo/tree/main/schemas/
+      placeholder: |
+        {
+          "title": "My Resource",
+          "description": "A brief description of what this resource is.",
+          "url": "https://example.com",
+          "authors": ["Author Name"],
+          "license": "MIT"
+        }
+      render: json
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I have validated my JSON against the schema for the selected record type.
+          required: true
+        - label: This resource is relevant to battery modelling, simulation or data.
+          required: true
+        - label: The resource is openly accessible (or I have noted access restrictions in the JSON).
+          required: true

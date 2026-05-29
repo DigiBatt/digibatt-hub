@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://digibatt.org/schemas/tutorials.json",
+  "title": "Tutorial Record",
+  "description": "A guide or learning resource for battery modelling",
+  "type": "object",
+  "required": ["title", "description"],
+  "additionalProperties": false,
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Title of the tutorial"
+    },
+    "description": {
+      "type": "string",
+      "description": "Brief description of what the tutorial covers"
+    },
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL to the tutorial"
+    },
+    "authors": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Tutorial authors"
+    },
+    "level": {
+      "type": "string",
+      "enum": ["Beginner", "Intermediate", "Advanced"],
+      "description": "Target skill level"
+    },
+    "language": {
+      "type": "string",
+      "description": "Programming language used, e.g. Python, Julia"
+    },
+    "format": {
+      "type": "string",
+      "description": "Format of the tutorial, e.g. Jupyter Notebook, Video, Written guide"
+    },
+    "body": {
+      "type": "string",
+      "description": "Optional additional markdown content for the record page"
+    }
+  }
+}

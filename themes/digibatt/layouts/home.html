@@ -1,3 +1,51 @@
 {{ define "main" }}
-  {{ .Content }}
+
+  <!-- Hero -->
+  <section class="bg-gradient-to-b from-primary/10 to-transparent pt-16 pb-12 text-center px-4">
+    <img src="/digibatt_favicon.png" alt="DigiBatt Hub logo" class="h-20 w-auto mx-auto mb-6">
+    <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">{{ site.Title }}</h1>
+    <p class="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto mb-8">
+      {{ with .Params.tagline }}{{ . }}{{ else }}A curated hub for open battery modelling resources — software, data, publications and more.{{ end }}
+    </p>
+    <!-- Hero search -->
+    <div class="max-w-lg mx-auto relative">
+      <input id="search-input-hero" type="search" placeholder="Search records…" autocomplete="off"
+             class="w-full pl-10 pr-4 py-3 text-base border border-gray-300 rounded-full shadow-sm bg-white focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+      <svg class="absolute left-3.5 top-1/2 -translate-y-1/2 w-4.5 h-4.5 text-gray-400 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+      </svg>
+      <div id="search-results-hero" class="hidden absolute left-0 right-0 top-full mt-2 bg-white rounded-xl shadow-lg border border-gray-200 z-50 overflow-hidden max-h-80 overflow-y-auto text-left">
+      </div>
+    </div>
+  </section>
+
+  <!-- Record type cards -->
+  <section class="py-12 px-4 max-w-5xl mx-auto">
+    <h2 class="text-2xl font-semibold text-center text-gray-800 mb-8">Explore Resources</h2>
+    <div class="flex flex-wrap justify-center gap-5">
+
+      {{ $sections := slice
+        (dict "slug" "software"     "name" "Software"     "icon" "💻" "fallback" "Open-source battery modelling tools")
+        (dict "slug" "publications" "name" "Publications" "icon" "📄" "fallback" "Research papers and articles")
+        (dict "slug" "datasets"     "name" "Datasets"     "icon" "📊" "fallback" "Experimental and simulation data")
+        (dict "slug" "databases"    "name" "Databases"    "icon" "🗄️" "fallback" "Curated battery databases")
+        (dict "slug" "tutorials"    "name" "Tutorials"    "icon" "🎓" "fallback" "Guides and learning resources")
+      }}
+
+      {{ range $sections }}
+        {{ $s := . }}
+        {{ $url := printf "/%s/" $s.slug }}
+        {{ $desc := $s.fallback }}
+        {{ with site.GetPage $url }}{{ with .Params.description }}{{ $desc = . }}{{ end }}{{ end }}
+        <a href="{{ $url }}"
+           class="group flex flex-col items-center text-center w-44 p-6 bg-white rounded-2xl shadow-sm border border-gray-200 hover:border-primary hover:shadow-md transition-all duration-200 no-underline">
+          <span class="text-4xl mb-3 group-hover:scale-110 transition-transform duration-200 inline-block">{{ $s.icon }}</span>
+          <h3 class="font-semibold text-gray-900 mb-2 text-base">{{ $s.name }}</h3>
+          <p class="text-xs text-gray-500 leading-snug">{{ $desc }}</p>
+        </a>
+      {{ end }}
+
+    </div>
+  </section>
+
 {{ end }}

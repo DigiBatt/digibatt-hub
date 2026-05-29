@@ -1,10 +1,12 @@
 +++
-date = '2026-05-28T16:50:28+02:00'
-draft = true
-title = 'Battmo'
+title = 'BattMo'
+date = '2026-05-28T15:27:26Z'
+draft = false
 type = 'software'
-description = 'BattMo is a versatile, and open-sourced, toolbox for modeling, and optimizing electrochemical devices. The initial development features a pseudo X-dimensional (PXD) framework for the Doyle-Fuller-Newman model of lithium-ion battery cells.'
-repo = 'https://battmo.org'
-language = 'BattMo'
-license = 'gpl3'
+description = 'BattMo is a versatile open-source toolbox for modelling and optimising electrochemical devices, featuring a pseudo X-dimensional (PXD) framework for the Doyle-Fuller-Newman model of lithium-ion cells.'
+repo = 'https://github.com/BattMoTeam/BattMo'
+language = 'MATLAB/Julia'
+license = 'GPL-3.0'
+authors = ['BattMo Team']
+version = '2.0'
 +++

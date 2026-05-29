@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://digibatt.org/schemas/datasets.json",
+  "title": "Dataset Record",
+  "description": "An experimental or simulation dataset for battery research",
+  "type": "object",
+  "required": ["title", "description"],
+  "additionalProperties": false,
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Name or title of the dataset"
+    },
+    "description": {
+      "type": "string",
+      "description": "Brief description of the dataset contents"
+    },
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL to download or access the dataset"
+    },
+    "format": {
+      "type": "string",
+      "description": "File format(s), e.g. CSV, HDF5, JSON"
+    },
+    "license": {
+      "type": "string",
+      "description": "Licence under which the dataset is published"
+    },
+    "size": {
+      "type": "string",
+      "description": "Approximate size of the dataset, e.g. 2.3 GB"
+    },
+    "authors": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "List of dataset creators"
+    },
+    "body": {
+      "type": "string",
+      "description": "Optional additional markdown content for the record page"
+    }
+  }
+}

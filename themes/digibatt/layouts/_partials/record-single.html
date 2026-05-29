@@ -1,0 +1,68 @@
+{{- /*
+Renders the single/detail page for any record type.
+Call as: {{ partial "record-single.html" . }}
+*/}}
+{{- $excludeKeys := slice "title" "date" "draft" "description" "type" -}}
+<div>
+
+  <!-- Breadcrumb -->
+  <nav class="flex items-center gap-1.5 text-sm text-gray-500 mb-6">
+    <a href="/" class="hover:text-primary no-underline">Home</a>
+    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+    </svg>
+    <a href="{{ .Section | relURL }}" class="hover:text-primary no-underline capitalize">{{ .Section }}</a>
+    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+    </svg>
+    <span class="text-gray-900 truncate max-w-xs">{{ .Title }}</span>
+  </nav>
+
+  <!-- Title + description -->
+  <h1 class="text-3xl font-bold text-gray-900 mb-3">{{ .Title }}</h1>
+  {{ with .Params.description }}
+    <p class="text-lg text-gray-600 mb-6 leading-relaxed">{{ . }}</p>
+  {{ end }}
+
+  <!-- Metadata panel -->
+  {{ $hasExtra := false }}
+  {{ range $k, $v := .Params }}
+    {{ if and (not (in $excludeKeys $k)) $v }}{{ $hasExtra = true }}{{ end }}
+  {{ end }}
+  {{ if $hasExtra }}
+    <div class="bg-white rounded-xl border border-gray-200 overflow-hidden mb-8">
+      <dl class="divide-y divide-gray-100">
+        {{ range $k, $v := .Params }}
+          {{ if and (not (in $excludeKeys $k)) $v }}
+            <div class="px-6 py-3 flex flex-col sm:flex-row sm:gap-4">
+              <dt class="sm:w-36 shrink-0 text-sm font-medium text-gray-500 capitalize mb-0.5 sm:mb-0">
+                {{ replace $k "_" " " }}
+              </dt>
+              <dd class="text-sm text-gray-900 break-words">
+                {{ if reflect.IsSlice $v }}
+                  {{ range $i, $item := $v }}{{ if $i }}, {{ end }}{{ $item }}{{ end }}
+                {{ else if eq (printf "%T" $v) "string" }}
+                  {{ if or (strings.HasPrefix $v "http://") (strings.HasPrefix $v "https://") }}
+                    <a href="{{ $v }}" class="text-primary hover:underline break-all" target="_blank" rel="noopener">{{ $v }}</a>
+                  {{ else }}
+                    {{ $v }}
+                  {{ end }}
+                {{ else }}
+                  {{ $v }}
+                {{ end }}
+              </dd>
+            </div>
+          {{ end }}
+        {{ end }}
+      </dl>
+    </div>
+  {{ end }}
+
+  <!-- Body content -->
+  {{ with .Content }}
+    <div class="prose max-w-none">
+      {{ . }}
+    </div>
+  {{ end }}
+
+</div>
