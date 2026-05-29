@@ -33,12 +33,12 @@ body {
   padding: 0;
 }
 
-a {
+a, ddmenu {
   color: var(--accent-primary);
   text-decoration: none;
 }
 
-a:hover {
+a:hover, ddmenu:hover {
   color: var(--accent-secondary);
   text-decoration: underline;
 }
@@ -55,7 +55,7 @@ h1 { font-size: 2rem; }
 h2 { font-size: 1.5rem; }
 h3 { font-size: 1.25rem; }
 
-.btn {
+button, .btn {
   background-color: var(--accent-primary);
   color: #fff;
   border: none;
@@ -65,7 +65,7 @@ h3 { font-size: 1.25rem; }
   font-size: 1rem;
 }
 
-.btn:hover {
+button:hover, .btn:hover {
   background-color: var(--accent-secondary);
 }
 
