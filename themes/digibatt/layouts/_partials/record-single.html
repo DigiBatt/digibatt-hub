@@ -47,7 +47,7 @@ Call as: {{ partial "record-single.html" . }}
                   {{ range $i, $item := $v }}{{ if $i }}, {{ end }}{{ $item }}{{ end }}
                 {{ else if eq (printf "%T" $v) "string" }}
                   {{ if or (strings.HasPrefix $v "http://") (strings.HasPrefix $v "https://") }}
-                    <a href="{{ $v }}" class="text-primary hover:underline break-all" target="_blank" rel="noopener">{{ $v }}</a>
+                    <a href="{{ $v }}" class="text-primary hover:underline break-all" target="_blank" rel="noopener noreferrer">{{ $v }}</a>
                   {{ else }}
                     {{ $v }}
                   {{ end }}
