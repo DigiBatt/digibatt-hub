@@ -25,11 +25,11 @@
     <div class="flex flex-wrap justify-center gap-5">
 
       {{ $sections := slice
-        (dict "slug" "software"     "name" "Software"     "icon" "💻" "fallback" "Open-source battery modelling tools")
-        (dict "slug" "publications" "name" "Publications" "icon" "📄" "fallback" "Research papers and articles")
-        (dict "slug" "datasets"     "name" "Datasets"     "icon" "📊" "fallback" "Experimental and simulation data")
-        (dict "slug" "databases"    "name" "Databases"    "icon" "🗄️" "fallback" "Curated battery databases")
-        (dict "slug" "tutorials"    "name" "Tutorials"    "icon" "🎓" "fallback" "Guides and learning resources")
+        (dict "slug" "cyclic-testing"      "name" "Cyclic Testing"      "icon" "🔋" "fallback" "Battery cycling experiments and test protocols")
+        (dict "slug" "data-repositories"   "name" "Data Repositories"   "icon" "🗄️" "fallback" "Repositories of battery research data")
+        (dict "slug" "data-standardisation" "name" "Data Standardisation" "icon" "📐" "fallback" "Standards, ontologies and data formats")
+        (dict "slug" "simulation"          "name" "Simulation"          "icon" "💻" "fallback" "Battery simulation tools and models")
+        (dict "slug" "system-level-testing" "name" "System Level Testing" "icon" "⚡" "fallback" "Resources for system level battery testing")
       }}
 
       {{ range $sections }}

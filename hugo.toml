@@ -1,5 +1,5 @@
 baseURL = 'https://digibatt.org/'
-locale = 'en-uk'
+languageCode = 'en-GB'
 title = 'DigiBatt Hub'
 theme = 'digibatt'
 
@@ -8,30 +8,40 @@ theme = 'digibatt'
 
 [menus]
 
-  [[menus.main]]
-    name = 'Software'
-    pageRef = '/software'
+ [[menus.main]]
+    name = 'Resources'
     weight = 10
+    identifier = 'resources'
 
   [[menus.main]]
-    name = 'Publications'
-    pageRef = '/publications'
-    weight = 20
+    name = 'Cyclic Testing'
+    pageRef = '/cyclic-testing'
+    weight = 11
+    parent = 'resources'
 
   [[menus.main]]
-    name = 'Datasets'
-    pageRef = '/datasets'
-    weight = 30
+    name = 'Data Repositories'
+    pageRef = '/data-repositories'
+    weight = 12
+    parent = 'resources'
 
   [[menus.main]]
-    name = 'Databases'
-    pageRef = '/databases'
-    weight = 40
+    name = 'Data Standardisation'
+    pageRef = '/data-standardisation'
+    weight = 13
+    parent = 'resources'
 
   [[menus.main]]
-    name = 'Tutorials'
-    pageRef = '/tutorials'
-    weight = 50
+    name = 'Simulation'
+    pageRef = '/simulation'
+    weight = 14
+    parent = 'resources'
+
+  [[menus.main]]
+    name = 'System Level Testing'
+    pageRef = '/system-level-testing'
+    weight = 15
+    parent = 'resources'
 
   [[menus.main]]
     name = 'About'
@@ -45,7 +55,7 @@ theme = 'digibatt'
 
   [[menus.main]]
     name = 'Submit'
-    url = 'https://github.com/FrancescaWatson/digibatt-hub-hugo/issues/new/choose'
+    pageRef = '/pages/submit'
     weight = 80
 
 [build]

@@ -33,12 +33,12 @@ body {
   padding: 0;
 }
 
-a {
+a, ddmenu {
   color: var(--accent-primary);
   text-decoration: none;
 }
 
-a:hover {
+a:hover, ddmenu:hover {
   color: var(--accent-secondary);
   text-decoration: underline;
 }

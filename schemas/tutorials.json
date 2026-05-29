@@ -4,7 +4,7 @@
   "title": "Tutorial Record",
   "description": "A guide or learning resource for battery modelling",
   "type": "object",
-  "required": ["title", "description"],
+  "required": ["title", "description", "category", "subcategory"],
   "additionalProperties": false,
   "properties": {
     "title": {
@@ -14,6 +14,16 @@
     "description": {
       "type": "string",
       "description": "Brief description of what the tutorial covers"
+    },
+    "category": {
+      "type": "string",
+      "enum": ["cyclic-testing", "data-repositories", "data-standardisation", "simulation", "system-level-testing"],
+      "description": "Main category this record belongs to"
+    },
+    "subcategory": {
+      "type": "string",
+      "enum": ["software", "publications", "tutorials", "datasets", "other"],
+      "description": "Subcategory within the main category"
     },
     "url": {
       "type": "string",

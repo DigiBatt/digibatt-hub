@@ -1,13 +1,12 @@
 {{- $records := slice -}}
-{{- range .Site.Sections -}}
-  {{- range .Pages -}}
-    {{- $record := dict
-      "title"       .Title
-      "description" (or .Params.description "")
-      "section"     .Section
-      "url"         .RelPermalink
-    -}}
-    {{- $records = $records | append $record -}}
-  {{- end -}}
+{{- range .Site.RegularPages -}}
+  {{- $record := dict
+    "title"       .Title
+    "description" (or .Params.description "")
+    "category"    (or .Params.category "")
+    "subcategory" (or .Params.subcategory "")
+    "url"         .RelPermalink
+  -}}
+  {{- $records = $records | append $record -}}
 {{- end -}}
 {{ $records | jsonify }}

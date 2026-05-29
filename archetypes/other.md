@@ -2,10 +2,11 @@
 date = '{{ .Date }}'
 draft = false
 title = '{{ replace .File.ContentBaseName "-" " " | title }}'
-type = 'databases'
+type = 'other'
+category = ''
+subcategory = 'other'
 description = ''
 url = ''
-access = ''
-license = ''
 authors = []
+license = ''
 +++

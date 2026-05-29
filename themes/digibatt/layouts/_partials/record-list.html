@@ -3,6 +3,24 @@ Renders the list page for any record section.
 Call as: {{ partial "record-list.html" . }}
 */}}
 <div>
+
+  <!-- Breadcrumb (shown when inside a subcategory, i.e. has a parent section) -->
+  {{ with .Parent }}
+    {{ if ne .Kind "home" }}
+      <nav class="flex items-center gap-1.5 text-sm text-gray-500 mb-6">
+        <a href="/" class="hover:text-primary no-underline">Home</a>
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+        </svg>
+        <a href="{{ .RelPermalink }}" class="hover:text-primary no-underline">{{ .Title }}</a>
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+        </svg>
+        <span class="text-gray-900">{{ $.Title }}</span>
+      </nav>
+    {{ end }}
+  {{ end }}
+
   <div class="mb-8">
     <h1 class="text-3xl font-bold text-gray-900 mb-2">{{ .Title }}</h1>
     {{ with .Params.description }}
