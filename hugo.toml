@@ -8,30 +8,40 @@ theme = 'digibatt'
 
 [menus]
 
+ [[menus.main]]
+    name = 'Resources'
+    weight = 10
+    identifier = 'resources'
+
   [[menus.main]]
     name = 'Cyclic Testing'
     pageRef = '/cyclic-testing'
-    weight = 10
+    weight = 11
+    parent = 'resources'
 
   [[menus.main]]
     name = 'Data Repositories'
     pageRef = '/data-repositories'
-    weight = 20
+    weight = 12
+    parent = 'resources'
 
   [[menus.main]]
     name = 'Data Standardisation'
     pageRef = '/data-standardisation'
-    weight = 30
+    weight = 13
+    parent = 'resources'
 
   [[menus.main]]
     name = 'Simulation'
     pageRef = '/simulation'
-    weight = 40
+    weight = 14
+    parent = 'resources'
 
   [[menus.main]]
     name = 'System Level Testing'
     pageRef = '/system-level-testing'
-    weight = 50
+    weight = 15
+    parent = 'resources'
 
   [[menus.main]]
     name = 'About'
