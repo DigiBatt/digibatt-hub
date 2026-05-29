@@ -1,5 +1,5 @@
 baseURL = 'https://digibatt.org/'
-locale = 'en-uk'
+languageCode = 'en-GB'
 title = 'DigiBatt Hub'
 theme = 'digibatt'
 
@@ -9,28 +9,28 @@ theme = 'digibatt'
 [menus]
 
   [[menus.main]]
-    name = 'Software'
-    pageRef = '/software'
+    name = 'Cyclic Testing'
+    pageRef = '/cyclic-testing'
     weight = 10
 
   [[menus.main]]
-    name = 'Publications'
-    pageRef = '/publications'
+    name = 'Data Repositories'
+    pageRef = '/data-repositories'
     weight = 20
 
   [[menus.main]]
-    name = 'Datasets'
-    pageRef = '/datasets'
+    name = 'Data Standardisation'
+    pageRef = '/data-standardisation'
     weight = 30
 
   [[menus.main]]
-    name = 'Databases'
-    pageRef = '/databases'
+    name = 'Simulation'
+    pageRef = '/simulation'
     weight = 40
 
   [[menus.main]]
-    name = 'Tutorials'
-    pageRef = '/tutorials'
+    name = 'System Level Testing'
+    pageRef = '/system-level-testing'
     weight = 50
 
   [[menus.main]]

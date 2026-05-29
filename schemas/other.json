@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://digibatt.org/schemas/other.json",
+  "title": "Other Record",
+  "description": "A generic resource record that does not fit other subcategory types",
+  "type": "object",
+  "required": ["title", "description", "category", "subcategory"],
+  "additionalProperties": false,
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Title or name of the resource"
+    },
+    "description": {
+      "type": "string",
+      "description": "Brief description of the resource"
+    },
+    "category": {
+      "type": "string",
+      "enum": ["cyclic-testing", "data-repositories", "data-standardisation", "simulation", "system-level-testing"],
+      "description": "Main category this record belongs to"
+    },
+    "subcategory": {
+      "type": "string",
+      "enum": ["software", "publications", "tutorials", "datasets", "other"],
+      "description": "Subcategory within the main category"
+    },
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL to access the resource"
+    },
+    "authors": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "List of authors or maintainers"
+    },
+    "license": {
+      "type": "string",
+      "description": "Licence under which the resource is published"
+    },
+    "body": {
+      "type": "string",
+      "description": "Optional additional markdown content for the record page"
+    }
+  }
+}

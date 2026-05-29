@@ -4,7 +4,7 @@
   "title": "Dataset Record",
   "description": "An experimental or simulation dataset for battery research",
   "type": "object",
-  "required": ["title", "description"],
+  "required": ["title", "description", "category", "subcategory"],
   "additionalProperties": false,
   "properties": {
     "title": {
@@ -14,6 +14,16 @@
     "description": {
       "type": "string",
       "description": "Brief description of the dataset contents"
+    },
+    "category": {
+      "type": "string",
+      "enum": ["cyclic-testing", "data-repositories", "data-standardisation", "simulation", "system-level-testing"],
+      "description": "Main category this record belongs to"
+    },
+    "subcategory": {
+      "type": "string",
+      "enum": ["software", "publications", "tutorials", "datasets", "other"],
+      "description": "Subcategory within the main category"
     },
     "url": {
       "type": "string",
