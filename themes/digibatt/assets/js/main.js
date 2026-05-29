@@ -48,47 +48,104 @@ function labelFor(item) {
   return parts.join(' › ');
 }
 
+// Return a safe URL: only allow relative paths and http(s) URLs.
+function safeUrl(url) {
+  if (!url) return '#';
+  if (url.startsWith('/') || url.startsWith('https://') || url.startsWith('http://')) return url;
+  return '#';
+}
+
 function renderDropdownResults(results, container) {
+  container.textContent = '';
   if (!results || results.length === 0) {
-    container.innerHTML = '<p class="px-4 py-3 text-sm text-gray-500">No results found.</p>';
+    const p = document.createElement('p');
+    p.className = 'px-4 py-3 text-sm text-gray-500';
+    p.textContent = 'No results found.';
+    container.appendChild(p);
   } else {
-    container.innerHTML = results
-      .slice(0, 8)
-      .map(r => `
-        <a href="${r.item.url}"
-           class="flex flex-col px-4 py-3 hover:bg-gray-50 border-b border-gray-100 last:border-0 no-underline">
-          <span class="text-sm font-medium text-gray-900">${r.item.title}</span>
-          <span class="text-xs text-gray-500 capitalize">${labelFor(r.item)}</span>
-        </a>`)
-      .join('');
+    results.slice(0, 8).forEach(r => {
+      const a = document.createElement('a');
+      a.href = safeUrl(r.item.url);
+      a.className = 'flex flex-col px-4 py-3 hover:bg-gray-50 border-b border-gray-100 last:border-0 no-underline';
+
+      const title = document.createElement('span');
+      title.className = 'text-sm font-medium text-gray-900';
+      title.textContent = r.item.title;
+
+      const label = document.createElement('span');
+      label.className = 'text-xs text-gray-500 capitalize';
+      label.textContent = labelFor(r.item);
+
+      a.appendChild(title);
+      a.appendChild(label);
+      container.appendChild(a);
+    });
   }
   container.classList.remove('hidden');
 }
 
+// SVG path for the "chevron right" arrow used in result cards.
+const CHEVRON_PATH = 'M9 5l7 7-7 7';
+
 function renderPageResults(results, container) {
+  container.textContent = '';
   if (!results || results.length === 0) {
-    container.innerHTML = '<p class="text-gray-500 text-sm">No results found.</p>';
+    const p = document.createElement('p');
+    p.className = 'text-gray-500 text-sm';
+    p.textContent = 'No results found.';
+    container.appendChild(p);
     return;
   }
-  container.innerHTML = results
-    .map(r => `
-      <article class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow duration-200">
-        <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
-          <div class="flex-1 min-w-0">
-            <h2 class="text-xl font-semibold text-gray-900 mb-1">${r.item.title}</h2>
-            ${r.item.description ? `<p class="text-gray-600 text-sm leading-relaxed">${r.item.description}</p>` : ''}
-            <span class="inline-block mt-2 text-xs text-gray-400 capitalize">${labelFor(r.item)}</span>
-          </div>
-          <a href="${r.item.url}"
-             class="shrink-0 inline-flex items-center gap-1 text-sm font-medium text-primary hover:text-secondary no-underline hover:underline">
-            View
-            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-            </svg>
-          </a>
-        </div>
-      </article>`)
-    .join('');
+  results.forEach(r => {
+    const article = document.createElement('article');
+    article.className = 'bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow duration-200';
+
+    const row = document.createElement('div');
+    row.className = 'flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3';
+
+    const body = document.createElement('div');
+    body.className = 'flex-1 min-w-0';
+
+    const h2 = document.createElement('h2');
+    h2.className = 'text-xl font-semibold text-gray-900 mb-1';
+    h2.textContent = r.item.title;
+    body.appendChild(h2);
+
+    if (r.item.description) {
+      const desc = document.createElement('p');
+      desc.className = 'text-gray-600 text-sm leading-relaxed';
+      desc.textContent = r.item.description;
+      body.appendChild(desc);
+    }
+
+    const cat = document.createElement('span');
+    cat.className = 'inline-block mt-2 text-xs text-gray-400 capitalize';
+    cat.textContent = labelFor(r.item);
+    body.appendChild(cat);
+
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('class', 'w-3.5 h-3.5');
+    svg.setAttribute('fill', 'none');
+    svg.setAttribute('stroke', 'currentColor');
+    svg.setAttribute('viewBox', '0 0 24 24');
+    const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    path.setAttribute('stroke-linecap', 'round');
+    path.setAttribute('stroke-linejoin', 'round');
+    path.setAttribute('stroke-width', '2');
+    path.setAttribute('d', CHEVRON_PATH);
+    svg.appendChild(path);
+
+    const link = document.createElement('a');
+    link.href = safeUrl(r.item.url);
+    link.className = 'shrink-0 inline-flex items-center gap-1 text-sm font-medium text-primary hover:text-secondary no-underline hover:underline';
+    link.textContent = 'View';
+    link.appendChild(svg);
+
+    row.appendChild(body);
+    row.appendChild(link);
+    article.appendChild(row);
+    container.appendChild(article);
+  });
 }
 
 function navigateToSearch(query) {
@@ -146,7 +203,11 @@ if (pageInput && pageResults) {
     await loadSearchIndex();
     if (!fuse) return;
     if (!q.trim()) {
-      pageResults.innerHTML = '<p class="text-gray-500 text-sm">Enter a search term above to find records.</p>';
+      pageResults.textContent = '';
+      const hint = document.createElement('p');
+      hint.className = 'text-gray-500 text-sm';
+      hint.textContent = 'Enter a search term above to find records.';
+      pageResults.appendChild(hint);
       return;
     }
     renderPageResults(fuse.search(q), pageResults);
