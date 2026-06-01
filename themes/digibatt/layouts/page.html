@@ -1,7 +1,11 @@
 {{ define "main" }}
-  {{ partial "breadcrumb.html" . }}
+  {{ if .Params.category }}
+    {{ partial "record-single.html" . }}
+  {{ else }}
+    {{ partial "breadcrumb.html" . }}
 
-  <h1 class="text-3xl font-bold text-gray-900 mb-3">{{ .Title }}</h1>
+    <h1 class="text-3xl font-bold text-gray-900 mb-3">{{ .Title }}</h1>
 
-  {{ .Content }}
+    {{ .Content }}
+  {{ end }}
 {{ end }}
