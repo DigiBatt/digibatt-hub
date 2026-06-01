@@ -20,6 +20,9 @@ Thumbs.db
 .env
 .env.local
 
+# Python files
+.venv
+
 # Node modules (if using npm for assets)
 node_modules/
 
