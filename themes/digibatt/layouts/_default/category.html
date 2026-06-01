@@ -1,17 +1,10 @@
 {{ define "main" }}
 <div>
 
-  <!-- Breadcrumb -->
-  <nav class="flex items-center gap-1.5 text-sm text-gray-500 mb-6">
-    <a href="/" class="hover:text-primary no-underline">Home</a>
-    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-    </svg>
-    <span class="text-gray-900">{{ .Title }}</span>
-  </nav>
+  {{ partial "breadcrumb.html" . }}
 
   <!-- Title + description -->
-  <div class="mb-8">
+  <div class="mb-10">
     <h1 class="text-3xl font-bold text-gray-900 mb-2">{{ .Title }}</h1>
     {{ with .Params.description }}
       <p class="text-gray-600 text-lg">{{ . }}</p>
@@ -21,33 +14,46 @@
     {{ end }}
   </div>
 
-  <!-- Subcategory cards -->
+  <!-- Subsections with collapsible headings -->
   {{ $subcategories := slice
-    (dict "slug" "software"     "name" "Software"     "icon" "💻" "desc" "Software tools relevant to this area")
-    (dict "slug" "publications" "name" "Publications" "icon" "📄" "desc" "Research papers and articles")
-    (dict "slug" "tutorials"    "name" "Tutorials"    "icon" "🎓" "desc" "Guides and learning resources")
-    (dict "slug" "datasets"     "name" "Datasets"     "icon" "📊" "desc" "Experimental and simulation datasets")
-    (dict "slug" "other"        "name" "Other"        "icon" "📦" "desc" "Other relevant resources")
+    (dict "slug" "software"     "name" "Software"     "icon" "💻")
+    (dict "slug" "publications" "name" "Publications" "icon" "📄")
+    (dict "slug" "tutorials"    "name" "Tutorials"    "icon" "🎓")
+    (dict "slug" "datasets"     "name" "Datasets"     "icon" "📊")
+    (dict "slug" "other"        "name" "Other"        "icon" "📦")
   }}
 
-  <div class="flex flex-wrap gap-5">
+  <div class="flex flex-col gap-4">
     {{ range $subcategories }}
       {{ $sub := . }}
       {{ $subURL := printf "%s%s/" $.RelPermalink $sub.slug }}
       {{ $subPage := site.GetPage $subURL }}
-      {{ $count := 0 }}
-      {{ with $subPage }}{{ $count = len .Pages }}{{ end }}
-      {{ $desc := $sub.desc }}
-      {{ with $subPage }}{{ with .Params.description }}{{ $desc = . }}{{ end }}{{ end }}
-      <a href="{{ $subURL }}"
-         class="group flex flex-col items-center text-center w-44 p-6 bg-white rounded-2xl shadow-sm border border-gray-200 hover:border-primary hover:shadow-md transition-all duration-200 no-underline">
-        <span class="text-4xl mb-3 group-hover:scale-110 transition-transform duration-200 inline-block">{{ $sub.icon }}</span>
-        <h2 class="font-semibold text-gray-900 mb-1 text-base">{{ $sub.name }}</h2>
-        <p class="text-xs text-gray-500 leading-snug mb-2">{{ $desc }}</p>
-        {{ if gt $count 0 }}
-          <span class="text-xs font-medium text-primary">{{ $count }} record{{ if ne $count 1 }}s{{ end }}</span>
-        {{ end }}
-      </a>
+      {{ $pages := slice }}
+      {{ with $subPage }}{{ $pages = .Pages }}{{ end }}
+      {{ if gt (len $pages) 0 }}
+        <details class="group bg-white rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition-shadow duration-200" open>
+          <summary class="flex items-center gap-3 cursor-pointer p-6 select-none list-none [&::-webkit-details-marker]:hidden">
+            <svg class="w-4 h-4 text-gray-400 transition-transform duration-200 group-open:rotate-90 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+            <span class="text-xl shrink-0">{{ $sub.icon }}</span>
+            <h2 class="text-xl font-semibold text-gray-900 m-0">{{ $sub.name }}</h2>
+            <span class="ml-auto text-xs font-medium text-gray-400 bg-gray-100 rounded-full px-2 py-0.5">{{ len $pages }} record{{ if ne (len $pages) 1 }}s{{ end }}</span>
+          </summary>
+          <ul class="divide-y divide-gray-100 mx-6 pb-6 border-t border-gray-100">
+            {{ range $pages }}
+              <li class="py-3">
+                <a href="{{ .RelPermalink }}" class="text-base font-medium text-primary hover:underline no-underline">
+                  {{ .Title }}
+                </a>
+                {{ with .Params.description }}
+                  <p class="text-sm text-gray-600 mt-0.5 mb-0 leading-relaxed line-clamp-2">{{ . | truncate 150 }}</p>
+                {{ end }}
+              </li>
+            {{ end }}
+          </ul>
+        </details>
+      {{ end }}
     {{ end }}
   </div>
 

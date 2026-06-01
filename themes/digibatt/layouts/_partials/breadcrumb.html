@@ -1,0 +1,22 @@
+{{- /*
+  Breadcrumb navigation partial.
+  Shows Home > ... > Current Page on all non-home pages.
+  Skips intermediate subcategory sections (those with a 'subcategory' param).
+*/ -}}
+{{ if not .IsHome }}
+<nav aria-label="Breadcrumb" class="flex items-center gap-1.5 text-sm text-gray-500 mb-6 flex-wrap">
+  <a href="/" class="hover:text-primary no-underline">Home</a>
+  {{- range .Ancestors.Reverse }}
+    {{- if and (ne .Kind "home") (not .Params.subcategory) }}
+      <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+      </svg>
+      <a href="{{ .RelPermalink }}" class="hover:text-primary no-underline">{{ .Title }}</a>
+    {{- end }}
+  {{- end }}
+  <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+  </svg>
+  <span class="text-gray-900 truncate">{{ .Title }}</span>
+</nav>
+{{ end }}
