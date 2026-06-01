@@ -71,11 +71,31 @@
     <!-- Mobile / tablet menu -->
     <div id="mobile-menu" class="hidden lg:hidden border-t border-gray-100 py-2">
       {{- range site.Menus.main }}
-        <a href="{{ .URL }}"
-           class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900 no-underline"
-           {{ if strings.HasPrefix .URL "http" }}target="_blank" rel="noopener noreferrer"{{ end }}>
-          {{ .Name }}
-        </a>
+        {{- if .HasChildren }}
+          <div>
+            <button class="mobile-submenu-toggle w-full flex items-center justify-between px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900" aria-expanded="false">
+              <span>{{ .Name }}</span>
+              <svg class="mobile-chevron w-4 h-4 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </button>
+            <div class="mobile-submenu hidden pl-4">
+              {{- range .Children }}
+                <a href="{{ .URL }}"
+                   class="block px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-900 no-underline"
+                   {{ if strings.HasPrefix .URL "http" }}target="_blank" rel="noopener noreferrer"{{ end }}>
+                  {{ .Name }}
+                </a>
+              {{- end }}
+            </div>
+          </div>
+        {{- else }}
+          <a href="{{ .URL }}"
+             class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900 no-underline"
+             {{ if strings.HasPrefix .URL "http" }}target="_blank" rel="noopener noreferrer"{{ end }}>
+            {{ .Name }}
+          </a>
+        {{- end }}
       {{- end }}
       <!-- Mobile search -->
       <div class="px-4 py-2 relative">
