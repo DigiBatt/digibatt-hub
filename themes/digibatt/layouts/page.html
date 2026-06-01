@@ -1,10 +1,7 @@
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
+  {{ partial "breadcrumb.html" . }}
 
-  {{ $dateMachine := .Date | time.Format "2006-01-02T15:04:05-07:00" }}
-  {{ $dateHuman := .Date | time.Format ":date_long" }}
-  <time datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+  <h1 class="text-3xl font-bold text-gray-900 mb-3">{{ .Title }}</h1>
 
   {{ .Content }}
-  {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
 {{ end }}
