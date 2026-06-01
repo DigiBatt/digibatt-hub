@@ -16,6 +16,18 @@ if (menuToggle && mobileMenu) {
   });
 }
 
+// ── Mobile sub-menu toggles ───────────────────────────────────────────────────
+document.querySelectorAll('.mobile-submenu-toggle').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const submenu = btn.nextElementSibling;
+    const chevron = btn.querySelector('.mobile-chevron');
+    const isOpen = !submenu.classList.contains('hidden');
+    submenu.classList.toggle('hidden', isOpen);
+    chevron.classList.toggle('rotate-180', !isOpen);
+    btn.setAttribute('aria-expanded', String(!isOpen));
+  });
+});
+
 // ── Search ────────────────────────────────────────────────────────────────────
 let fuse = null;
 
