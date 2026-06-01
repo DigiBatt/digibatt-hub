@@ -3,7 +3,7 @@ title = 'Tutorials'
 description = 'Guides and learning resources'
 subcategory = 'tutorials'
 
-[_build]
+[build]
   render = 'never'
   list = 'always'
 +++

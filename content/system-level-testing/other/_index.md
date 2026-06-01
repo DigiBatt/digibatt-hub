@@ -3,7 +3,7 @@ title = 'Other'
 description = 'Other relevant resources'
 subcategory = 'other'
 
-[_build]
+[build]
   render = 'never'
   list = 'always'
 +++

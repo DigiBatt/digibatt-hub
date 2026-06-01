@@ -3,7 +3,7 @@ title = 'Publications'
 description = 'Research papers and articles'
 subcategory = 'publications'
 
-[_build]
+[build]
   render = 'never'
   list = 'always'
 +++
