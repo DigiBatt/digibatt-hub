@@ -2,13 +2,14 @@
 date = '{{ .Date }}'
 draft = false
 title = '{{ replace .File.ContentBaseName "-" " " | title }}'
-type = 'software'
 category = ''
 subcategory = 'software'
-description = ''
+link = ''
 repository = ''
+documentation = ''
+doi = ''
 language = ''
 license = ''
 authors = []
-version = ''
+funding_source = []
 +++

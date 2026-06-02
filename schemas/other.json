@@ -15,7 +15,7 @@
       "type": "string",
       "description": "Brief description of the resource"
     },
-    "category": {
+     "category": {
       "type": "string",
       "enum": ["cyclic-testing", "data-repositories", "data-standardisation", "simulation", "system-level-testing"],
       "description": "Main category this record belongs to"
@@ -28,20 +28,25 @@
     "link": {
       "type": "string",
       "format": "uri",
-      "description": "URL to access the resource"
+      "description": "URL to download or access the resource"
     },
-    "authors": {
-      "type": "array",
-      "items": { "type": "string" },
-      "description": "List of authors or maintainers"
+    "doi": {
+      "type": "string",
+      "description": "Digital Object Identifier, e.g. 10.1000/xyz123"
     },
     "license": {
       "type": "string",
       "description": "Licence under which the resource is published"
     },
-    "body": {
-      "type": "string",
-      "description": "Optional additional markdown content for the record page"
+    "authors": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "List of creators"
+    },
+    "funding_source": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "List of funding_sources"
     }
   }
 }

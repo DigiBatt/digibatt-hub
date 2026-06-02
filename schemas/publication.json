@@ -25,31 +25,36 @@
       "enum": ["software", "publication", "tutorial", "dataset", "other"],
       "description": "Subcategory within the main category"
     },
-    "authors": {
-      "type": "array",
-      "items": { "type": "string" },
-      "description": "List of author names"
+    "link": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL to download or access the dataset"
     },
     "doi": {
       "type": "string",
       "description": "Digital Object Identifier, e.g. 10.1000/xyz123"
     },
-    "year": {
+    "license": {
+      "type": "string",
+      "description": "Licence under which the resource is published"
+    },
+    "authors": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "List of creators"
+    },
+   "year": {
       "type": ["integer", "string"],
       "description": "Publication year"
     },
-    "journal": {
+    "publisher": {
       "type": "string",
-      "description": "Journal or conference name"
-    },
-    "link": {
-      "type": "string",
-      "format": "uri",
-      "description": "URL to the full text or landing page"
-    },
-    "body": {
-      "type": "string",
-      "description": "Optional additional markdown content for the record page"
+      "description": "Publisher of the resource, e.g. journal name, website etc."
+    },    
+    "funding_source": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "List of funding_sources"
     }
   }
 }
