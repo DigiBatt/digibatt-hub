@@ -1,5 +1,5 @@
 baseURL = 'https://digibatt.org/'
-languageCode = 'en-GB'
+locale = 'en-GB'
 title = 'DigiBatt Hub'
 theme = 'digibatt'
 
@@ -45,17 +45,17 @@ theme = 'digibatt'
 
   [[menus.main]]
     name = 'About'
-    pageRef = '/pages/about'
+    pageRef = '/about'
     weight = 60
 
   [[menus.main]]
     name = 'Contact'
-    pageRef = '/pages/contact'
+    pageRef = '/contact'
     weight = 70
 
   [[menus.main]]
     name = 'Submit'
-    pageRef = '/pages/submit'
+    pageRef = '/submit'
     weight = 80
 
 [build]
