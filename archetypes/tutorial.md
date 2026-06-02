@@ -2,13 +2,13 @@
 date = '{{ .Date }}'
 draft = false
 title = '{{ replace .File.ContentBaseName "-" " " | title }}'
-type = 'datasets'
+type = 'tutorial'
 category = ''
-subcategory = 'datasets'
+subcategory = 'tutorial'
 description = ''
-url = ''
-format = ''
-license = ''
-size = ''
+link = ''
 authors = []
+level = ''
+language = ''
+format = ''
 +++

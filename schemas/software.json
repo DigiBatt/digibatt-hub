@@ -22,10 +22,10 @@
     },
     "subcategory": {
       "type": "string",
-      "enum": ["software", "publications", "tutorials", "datasets", "other"],
+      "enum": ["software", "publication", "tutorial", "dataset", "other"],
       "description": "Subcategory within the main category"
     },
-    "repo": {
+    "repoository": {
       "type": "string",
       "format": "uri",
       "description": "URL to the source code repository or project homepage"
