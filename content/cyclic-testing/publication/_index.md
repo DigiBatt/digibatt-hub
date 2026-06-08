@@ -1,7 +1,7 @@
 +++
 title = 'Publications'
 description = 'Research papers and articles'
-subcategory = 'publications'
+subcategory = 'publication'
 
 [build]
   render = 'never'

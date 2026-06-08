@@ -12,8 +12,8 @@ OUTPUT_DIR = Path("data/uncategorised")
 # Map Zenodo resource_type to schema file
 RESOURCE_TYPE_MAP = {
     "software": "software.json",
-    "dataset": "datasets.json",
-    "publication": "publications.json",
+    "dataset": "dataset.json",
+    "publication": "publication.json",
     "other": "other.json",
 }
 
@@ -78,7 +78,7 @@ def zenodo_to_db_record(zenodo: dict, resource_type: str, schema: dict) -> dict:
         "description": description,
         "category": "",           # left blank for manual categorisation
         "subcategory": resource_type,
-        "url": url,
+        "link": url,
         "license": license_id,
         "authors": authors,
     })
