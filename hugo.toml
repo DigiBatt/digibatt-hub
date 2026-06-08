@@ -32,8 +32,8 @@ theme = 'digibatt'
     parent = 'resources'
 
   [[menus.main]]
-    name = 'Simulation'
-    pageRef = '/simulation'
+    name = 'Simulation and Parameterisation'
+    pageRef = '/simulation-and-parameterisation'
     weight = 14
     parent = 'resources'
 
