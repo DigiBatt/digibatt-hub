@@ -2,7 +2,7 @@
 Renders the single/detail page for any record type.
 Call as: {{ partial "record-single.html" . }}
 */}}
-{{- $excludeKeys := slice "title" "date" "draft" "description" "type" -}}
+{{- $excludeKeys := slice "title" "date" "draft" "description" "type" "lastmod" "publishdate" -}}
 <div>
 
   {{ partial "breadcrumb.html" . }}
