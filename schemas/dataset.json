@@ -34,8 +34,14 @@
       "type": "string",
       "description": "Digital Object Identifier, e.g. 10.1000/xyz123"
     },
+    "file_formats": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "File formats contained in the dataset"
+    },    
     "license": {
-      "type": "string",
+      "type": "array",
+      "items": { "type": "string" },
       "description": "Licence under which the dataset is published"
     },
     "authors": {

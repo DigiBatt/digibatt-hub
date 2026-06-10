@@ -1,0 +1,14 @@
+{
+  "title": "My software",
+  "description": "Description of software",
+  "category": "choose a category",
+  "subcategory": "choose a subcategory",
+  "link": "Link to webpage",
+  "repository": "Link to repo",
+  "documentation": "Link to documentaion",
+  "doi": "DOI",
+  "language": ["List", "programming", "languages"],
+  "license": ["List", "licences"],
+  "authors": ["List", "authors"],
+  "funding_source": ["List", "funders"]
+}

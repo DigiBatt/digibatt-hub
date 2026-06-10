@@ -45,11 +45,13 @@
       "description": "Digital Object Identifier, e.g. 10.1000/xyz123"
     },
     "language": {
-      "type": "string",
+      "type": "array",
+      "items": { "type": "string" },
       "description": "Language which the software is written in"
     },    
     "license": {
-      "type": "string",
+      "type": "array",
+      "items": { "type": "string" },
       "description": "Licence under which the software is published"
     },
     "authors": {

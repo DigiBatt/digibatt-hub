@@ -1,0 +1,14 @@
+{
+  "title": "My dataset",
+  "description": "Description of dataset",
+  "category": "choose a category",
+  "subcategory": "choose a subcategory",
+  "link": "Link to webpage",
+  "repository": "Link to repo",
+  "documentation": "Link to documentaion",
+  "doi": "DOI",
+  "file_formats": ["List", "file", "extensions"],
+  "license": ["List", "licences"],
+  "authors": ["List", "authors"],
+  "funding_source": ["List", "funders"]
+}
