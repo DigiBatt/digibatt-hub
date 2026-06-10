@@ -1,6 +1,6 @@
 name: Submit a Record
 description: >
-  Submit a new resource to the DigiBatt Hub. Accepted types: software,
+  Submit a new resource to the DigiBatt Hub. Accepted record types: software,
   publication, dataset, database, tutorial.
 title: "[SUBMIT] "
 labels: ["submission"]
@@ -15,16 +15,30 @@ body:
         directory — validate your JSON against the relevant schema before submitting.
 
   - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      description: Which category does this resource belong to?
+      options:
+        - cyclic-testing
+        - data-repositories
+        - data-standardisation
+        - simulation-and-parameterisation
+        - system-level-testing
+    validations:
+      required: true
+
+  - type: dropdown
     id: record-type
     attributes:
       label: Record Type
-      description: Which category does this resource belong to?
+      description: What type of resource is this?
       options:
         - software
         - publication
         - dataset
-        - database
         - tutorial
+        - other
     validations:
       required: true
 
@@ -33,8 +47,8 @@ body:
     attributes:
       label: JSON Record
       description: >
-        Paste the complete JSON object for your record. See the schema for the
-        selected type at https://github.com/FrancescaWatson/digibatt-hub-hugo/tree/main/schemas/
+        Paste the complete JSON object for your record. Validate your JSON against the 
+        schema at `schemas/{record-type}.json` before submitting.
       placeholder: |
         {
           "title": "My Resource",
