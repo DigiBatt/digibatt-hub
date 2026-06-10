@@ -17,9 +17,6 @@ Call as: {{ partial "record-single-other.html" . }}
 
   <!-- Title + description -->
   <h1 class="text-3xl font-bold text-gray-900 mb-3">{{ .Title }}</h1>
-  {{ with $p.description }}
-    <p class="text-lg text-gray-600 mb-6 leading-relaxed">{{ . }}</p>
-  {{ end }}
 
   <!-- Metadata panel -->
   {{- $hasExtra := false -}}
@@ -56,7 +53,7 @@ Call as: {{ partial "record-single-other.html" . }}
     </div>
   {{ end }}
 
-  {{ with .Content }}
+  {{ with $p.description }}
     <div class="prose max-w-none">{{ . }}</div>
   {{ end }}
 
