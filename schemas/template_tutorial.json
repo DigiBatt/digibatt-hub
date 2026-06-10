@@ -1,0 +1,12 @@
+{
+  "title": "My tutorial",
+  "description": "Brief description of what the tutorial covers",
+  "category": "choose a category",
+  "subcategory": "choose a subcategory",
+  "link": "Link to webpage",
+  "format": "Format of the tutorial (e.g. Jupyter Notebook, Video, Written guide)",
+  "doi": "DOI",
+  "license": ["List", "licences"],
+  "authors": ["List", "authors"],
+  "funding_source": ["List", "funders"]
+}
