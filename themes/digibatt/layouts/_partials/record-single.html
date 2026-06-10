@@ -47,11 +47,9 @@ Call as: {{ partial "record-single.html" . }}
     </div>
   {{ end }}
 
-  <!-- Body content -->
-  {{ with .Content }}
-    <div class="prose max-w-none">
-      {{ . }}
-    </div>
-  {{ end }}
+
+{{ with .Params.description }}
+   <div class="prose max-w-none">{{ . }}</div>
+{{ end }}
 
 </div>
