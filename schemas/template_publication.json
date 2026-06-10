@@ -1,0 +1,13 @@
+{
+  "title": "My publication",
+  "description": "Abstract or brief summary",
+  "category": "choose a category",
+  "subcategory": "choose a subcategory",
+  "link": "Link to webpage",
+  "doi": "DOI",
+  "license": ["List", "licences"],
+  "authors": ["List", "authors"],
+  "year": 2024,
+  "publisher": "Publisher name",
+  "funding_source": ["List", "funders"]
+}

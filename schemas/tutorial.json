@@ -39,7 +39,8 @@
       "description": "Digital Object Identifier, e.g. 10.1000/xyz123"
     },
     "license": {
-      "type": "string",
+      "type": "array",
+      "items": { "type": "string" },
       "description": "Licence under which the resource is published"
     },
     "authors": {

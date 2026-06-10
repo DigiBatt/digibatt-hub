@@ -1,0 +1,11 @@
+{
+  "title": "My resource",
+  "description": "Brief description of the resource",
+  "category": "choose a category",
+  "subcategory": "choose a subcategory",
+  "link": "Link to webpage",
+  "doi": "DOI",
+  "license": ["List", "licences"],
+  "authors": ["List", "authors"],
+  "funding_source": ["List", "funders"]
+}
