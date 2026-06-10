@@ -1,0 +1,65 @@
+{{- /*
+Renders the single/detail page for a publication record.
+Fields displayed in the order defined in schemas/publication.json.
+Call as: {{ partial "record-single-publication.html" . }}
+*/}}
+{{- $p := .Params -}}
+{{- $fields := slice
+  (dict "key" "link"           "label" "Link")
+  (dict "key" "doi"            "label" "DOI")
+  (dict "key" "license"        "label" "License")
+  (dict "key" "authors"        "label" "Authors")
+  (dict "key" "year"           "label" "Year")
+  (dict "key" "publisher"      "label" "Publisher")
+  (dict "key" "funding_source" "label" "Funding Source")
+-}}
+<div>
+
+  {{ partial "breadcrumb.html" . }}
+
+  <!-- Title + description -->
+  <h1 class="text-3xl font-bold text-gray-900 mb-3">{{ .Title }}</h1>
+  {{ with $p.description }}
+    <p class="text-lg text-gray-600 mb-6 leading-relaxed">{{ . }}</p>
+  {{ end }}
+
+  <!-- Metadata panel -->
+  {{- $hasExtra := false -}}
+  {{- range $fields -}}
+    {{- if index $p .key -}}{{- $hasExtra = true -}}{{- end -}}
+  {{- end -}}
+  {{ if $hasExtra }}
+    <div class="bg-white rounded-xl border border-gray-200 overflow-hidden mb-8">
+      <dl class="divide-y divide-gray-100">
+        {{ range $fields }}
+          {{- $v := index $p .key -}}
+          {{ if $v }}
+            <div class="px-6 py-3 flex flex-col sm:flex-row sm:gap-4">
+              <dt class="sm:w-36 shrink-0 text-sm font-medium text-gray-500 capitalize mb-0.5 sm:mb-0">
+                {{ .label }}
+              </dt>
+              <dd class="text-sm text-gray-900 break-words">
+                {{ if reflect.IsSlice $v }}
+                  {{ range $i, $item := $v }}{{ if $i }}, {{ end }}{{ $item }}{{ end }}
+                {{ else if eq (printf "%T" $v) "string" }}
+                  {{ if or (strings.HasPrefix $v "http://") (strings.HasPrefix $v "https://") }}
+                    <a href="{{ $v }}" class="text-primary hover:underline break-all" target="_blank" rel="noopener noreferrer">{{ $v }}</a>
+                  {{ else }}
+                    {{ $v }}
+                  {{ end }}
+                {{ else }}
+                  {{ $v }}
+                {{ end }}
+              </dd>
+            </div>
+          {{ end }}
+        {{ end }}
+      </dl>
+    </div>
+  {{ end }}
+
+  {{ with .Content }}
+    <div class="prose max-w-none">{{ . }}</div>
+  {{ end }}
+
+</div>
