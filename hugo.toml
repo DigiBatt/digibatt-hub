@@ -2,6 +2,7 @@ baseURL = 'https://digibatt.github.io/digibatt-hub'
 locale = 'en-GB'
 title = 'DigiBatt Hub'
 theme = 'digibatt'
+canonifyurls = true
 
 [outputs]
   home = ['HTML', 'JSON']
