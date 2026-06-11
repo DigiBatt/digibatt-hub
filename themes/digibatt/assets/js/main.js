@@ -1,4 +1,4 @@
-import Fuse from '/js/fuse.min.mjs';
+import Fuse from './fuse.min.mjs';
 
 // ── Hamburger menu toggle ─────────────────────────────────────────────────────
 const menuToggle = document.getElementById('menu-toggle');
