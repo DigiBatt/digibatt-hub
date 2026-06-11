@@ -1,7 +1,7 @@
 {{- /*
-Renders the single/detail page for an "other" record.
-Fields displayed in the order defined in schemas/other.json.
-Call as: {{ partial "record-single-other.html" . }}
+Renders the single/detail page for a publication record.
+Fields displayed in the order defined in schemas/publication.json.
+Call as: {{ partial "record-single-publication.html" . }}
 */}}
 {{- $p := .Params -}}
 {{- $fields := slice
@@ -9,14 +9,10 @@ Call as: {{ partial "record-single-other.html" . }}
   (dict "key" "doi"            "label" "DOI")
   (dict "key" "license"        "label" "License")
   (dict "key" "authors"        "label" "Authors")
+  (dict "key" "year"           "label" "Year")
+  (dict "key" "publisher"      "label" "Publisher")
   (dict "key" "funding_source" "label" "Funding Source")
 -}}
-<div>
-
-  {{ partial "breadcrumb.html" . }}
-
-  <!-- Title + description -->
-  <h1 class="text-3xl font-bold text-gray-900 mb-3">{{ .Title }}</h1>
 
   <!-- Metadata panel -->
   {{- $hasExtra := false -}}
@@ -52,9 +48,3 @@ Call as: {{ partial "record-single-other.html" . }}
       </dl>
     </div>
   {{ end }}
-
-  {{ with $p.description }}
-    <div class="prose max-w-none">{{ . }}</div>
-  {{ end }}
-
-</div>

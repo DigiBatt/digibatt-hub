@@ -1,7 +1,7 @@
 {{- /*
-Renders the single/detail page for a dataset record.
-Fields displayed in the order defined in schemas/dataset.json.
-Call as: {{ partial "record-single-dataset.html" . }}
+Renders the single/detail page for an "other" record.
+Fields displayed in the order defined in schemas/other.json.
+Call as: {{ partial "record-single-other.html" . }}
 */}}
 {{- $p := .Params -}}
 {{- $fields := slice
@@ -11,15 +11,8 @@ Call as: {{ partial "record-single-dataset.html" . }}
   (dict "key" "authors"        "label" "Authors")
   (dict "key" "funding_source" "label" "Funding Source")
 -}}
-<div>
 
-  {{ partial "breadcrumb.html" . }}
-
-  <!-- Title + description -->
-  <h1 class="text-3xl font-bold text-gray-900 mb-3">{{ .Title }}</h1>
-
-
-  <!-- Metadata panel -->
+<!-- Metadata panel -->
   {{- $hasExtra := false -}}
   {{- range $fields -}}
     {{- if index $p .key -}}{{- $hasExtra = true -}}{{- end -}}
@@ -53,9 +46,3 @@ Call as: {{ partial "record-single-dataset.html" . }}
       </dl>
     </div>
   {{ end }}
-
-  {{ with $p.description }}
-    <div class="prose max-w-none">{{ . }}</div>
-  {{ end }}
-
-</div>

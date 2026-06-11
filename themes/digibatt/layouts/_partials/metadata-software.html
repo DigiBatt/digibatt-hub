@@ -1,23 +1,19 @@
 {{- /*
-Renders the single/detail page for a tutorial record.
-Fields displayed in the order defined in schemas/tutorial.json.
-Call as: {{ partial "record-single-tutorial.html" . }}
+Renders the single/detail page for a software record.
+Fields displayed in the order defined in schemas/software.json.
+Call as: {{ partial "record-single-software.html" . }}
 */}}
 {{- $p := .Params -}}
 {{- $fields := slice
-  (dict "key" "link"           "label" "Link")
-  (dict "key" "format"         "label" "Format")
-  (dict "key" "doi"            "label" "DOI")
-  (dict "key" "license"        "label" "License")
-  (dict "key" "authors"        "label" "Authors")
+  (dict "key" "link"          "label" "Link")
+  (dict "key" "repository"    "label" "Repository")
+  (dict "key" "documentation" "label" "Documentation")
+  (dict "key" "doi"           "label" "DOI")
+  (dict "key" "language"      "label" "Language")
+  (dict "key" "license"       "label" "License")
+  (dict "key" "authors"       "label" "Authors")
   (dict "key" "funding_source" "label" "Funding Source")
 -}}
-<div>
-
-  {{ partial "breadcrumb.html" . }}
-
-  <!-- Title + description -->
-  <h1 class="text-3xl font-bold text-gray-900 mb-3">{{ .Title }}</h1>
 
   <!-- Metadata panel -->
   {{- $hasExtra := false -}}
@@ -53,9 +49,3 @@ Call as: {{ partial "record-single-tutorial.html" . }}
       </dl>
     </div>
   {{ end }}
-
-  {{ with $p.description }}
-    <div class="prose max-w-none">{{ . }}</div>
-  {{ end }}
-
-</div>
