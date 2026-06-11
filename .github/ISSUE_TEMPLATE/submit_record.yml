@@ -11,7 +11,7 @@ body:
       value: |
         Thanks for contributing to the DigiBatt Hub! Please fill in the fields below.
         JSON schemas for each record type are in the
-        [`schemas/`](https://github.com/FrancescaWatson/digibatt-hub-hugo/tree/main/schemas)
+        [`schemas/`](https://github.com/DigiBatt/digibatt-hub/tree/main/schemas)
         directory — validate your JSON against the relevant schema before submitting.
 
   - type: dropdown
