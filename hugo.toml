@@ -1,7 +1,8 @@
-baseURL = 'https://digibatt.org/'
+baseURL = 'https://digibatt.github.io/digibatt-hub/'
 locale = 'en-GB'
 title = 'DigiBatt Hub'
 theme = 'digibatt'
+relativeURLs = true
 
 [outputs]
   home = ['HTML', 'JSON']
