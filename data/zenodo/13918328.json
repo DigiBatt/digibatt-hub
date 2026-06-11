@@ -1,0 +1,146 @@
+{
+  "created": "2024-10-11T08:25:48.175880+00:00",
+  "modified": "2024-10-11T08:25:48.485761+00:00",
+  "id": 13918328,
+  "conceptrecid": "13918218",
+  "doi": "10.5281/zenodo.13918328",
+  "conceptdoi": "10.5281/zenodo.13918218",
+  "doi_url": "https://doi.org/10.5281/zenodo.13918328",
+  "metadata": {
+    "title": "DigiBatt Project Handbook and Risk Management Table",
+    "doi": "10.5281/zenodo.13918328",
+    "publication_date": "2024-10-11",
+    "description": "<p>This deliverable sets out the management guidelines which will be followed in the<br>DigiBatt project. The main purpose of the deliverable is to provide guidance to<br>project participants to enable the efficient implementation of the action. The<br>deliverable contains information and links to relevant documents, files and<br>templates to be used in the project, including, where appropriate, links to the Grant<br>Agreement and Consortium Agreement. Information in the legally binding Grant<br>Agreement and Consortium Agreement takes precedence over information<br>contained in this handbook. All partners are responsible for fulfilling contractual<br>obligations the Grant Agreement and Consortium Agreement.</p>",
+    "access_right": "open",
+    "creators": [
+      {
+        "name": "SINTEF Industry, SINTEF Digital",
+        "affiliation": null
+      }
+    ],
+    "keywords": [
+      "Project handbook",
+      "Risk management table"
+    ],
+    "language": "eng",
+    "resource_type": {
+      "title": "Project deliverable",
+      "type": "publication",
+      "subtype": "deliverable"
+    },
+    "license": {
+      "id": "cc-by-4.0"
+    },
+    "grants": [
+      {
+        "code": "101103997",
+        "internal_id": "10.13039/501100000780::101103997",
+        "funder": {
+          "name": "European Commission",
+          "doi": "10.13039/501100000780",
+          "acronym": "EC"
+        },
+        "title": "DIGITAL SOLUTIONS FOR ACCELERATED BATTERY TESTING",
+        "acronym": "DigiBatt",
+        "program": "HORIZON.2.5",
+        "url": "https://cordis.europa.eu/projects/101103997"
+      }
+    ],
+    "communities": [
+      {
+        "id": "digibatt"
+      },
+      {
+        "id": "eu"
+      }
+    ],
+    "relations": {
+      "version": [
+        {
+          "index": 1,
+          "is_last": true,
+          "parent": {
+            "pid_type": "recid",
+            "pid_value": "13918218"
+          }
+        }
+      ]
+    }
+  },
+  "title": "DigiBatt Project Handbook and Risk Management Table",
+  "links": {
+    "self": "https://zenodo.org/api/records/13918328",
+    "self_html": "https://zenodo.org/records/13918328",
+    "preview_html": "https://zenodo.org/records/13918328?preview=1",
+    "doi": "https://doi.org/10.5281/zenodo.13918328",
+    "self_doi": "https://doi.org/10.5281/zenodo.13918328",
+    "self_doi_html": "https://zenodo.org/doi/10.5281/zenodo.13918328",
+    "reserve_doi": "https://zenodo.org/api/records/13918328/draft/pids/doi",
+    "parent": "https://zenodo.org/api/records/13918218",
+    "parent_html": "https://zenodo.org/records/13918218",
+    "parent_doi": "https://doi.org/10.5281/zenodo.13918218",
+    "parent_doi_html": "https://zenodo.org/doi/10.5281/zenodo.13918218",
+    "self_iiif_manifest": "https://zenodo.org/api/iiif/record:13918328/manifest",
+    "self_iiif_sequence": "https://zenodo.org/api/iiif/record:13918328/sequence/default",
+    "files": "https://zenodo.org/api/records/13918328/files",
+    "media_files": "https://zenodo.org/api/records/13918328/media-files",
+    "thumbnails": {
+      "10": "https://zenodo.org/api/iiif/record:13918328:D1.1_DigiBattHandbook_v1.1.pdf/full/%5E10,/0/default.jpg",
+      "50": "https://zenodo.org/api/iiif/record:13918328:D1.1_DigiBattHandbook_v1.1.pdf/full/%5E50,/0/default.jpg",
+      "100": "https://zenodo.org/api/iiif/record:13918328:D1.1_DigiBattHandbook_v1.1.pdf/full/%5E100,/0/default.jpg",
+      "250": "https://zenodo.org/api/iiif/record:13918328:D1.1_DigiBattHandbook_v1.1.pdf/full/%5E250,/0/default.jpg",
+      "750": "https://zenodo.org/api/iiif/record:13918328:D1.1_DigiBattHandbook_v1.1.pdf/full/%5E750,/0/default.jpg",
+      "1200": "https://zenodo.org/api/iiif/record:13918328:D1.1_DigiBattHandbook_v1.1.pdf/full/%5E1200,/0/default.jpg"
+    },
+    "archive": "https://zenodo.org/api/records/13918328/files-archive",
+    "archive_media": "https://zenodo.org/api/records/13918328/media-files-archive",
+    "latest": "https://zenodo.org/api/records/13918328/versions/latest",
+    "latest_html": "https://zenodo.org/records/13918328/latest",
+    "versions": "https://zenodo.org/api/records/13918328/versions",
+    "draft": "https://zenodo.org/api/records/13918328/draft",
+    "access_links": "https://zenodo.org/api/records/13918328/access/links",
+    "access_grants": "https://zenodo.org/api/records/13918328/access/grants",
+    "access_users": "https://zenodo.org/api/records/13918328/access/users",
+    "access_request": "https://zenodo.org/api/records/13918328/access/request",
+    "access": "https://zenodo.org/api/records/13918328/access",
+    "communities": "https://zenodo.org/api/records/13918328/communities",
+    "communities-suggestions": "https://zenodo.org/api/records/13918328/communities-suggestions",
+    "request_deletion": "https://zenodo.org/api/records/13918328/request-deletion",
+    "file_modification": "https://zenodo.org/api/records/13918328/file-modification",
+    "quota_increase": "https://zenodo.org/api/records/13918328/quota-increase",
+    "requests": "https://zenodo.org/api/records/13918328/requests"
+  },
+  "updated": "2024-10-11T08:25:48.485761+00:00",
+  "recid": "13918328",
+  "revision": 4,
+  "files": [
+    {
+      "id": "c5eeadb9-b1ca-46cf-9bf9-6fdea3f3250c",
+      "key": "D1.1_DigiBattHandbook_v1.1.pdf",
+      "size": 1972281,
+      "checksum": "md5:391278e85c27963deab8bc4ed1bbcfc7",
+      "links": {
+        "self": "https://zenodo.org/api/records/13918328/files/D1.1_DigiBattHandbook_v1.1.pdf/content"
+      }
+    }
+  ],
+  "swh": null,
+  "owners": [
+    {
+      "id": "1098558"
+    }
+  ],
+  "status": "published",
+  "stats": {
+    "downloads": 67,
+    "unique_downloads": 58,
+    "views": 95,
+    "unique_views": 90,
+    "version_downloads": 57,
+    "version_unique_downloads": 49,
+    "version_unique_views": 79,
+    "version_views": 84
+  },
+  "state": "done",
+  "submitted": true
+}

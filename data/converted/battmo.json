@@ -1,0 +1,14 @@
+{
+  "title": "BattMo",
+  "description": "BattMo is a versatile, and open-sourced, toolbox for modeling, and optimizing electrochemical devices. The initial development features a pseudo X-dimensional (PXD) framework for the Doyle-Fuller-Newman model of lithium-ion battery cells. However, the development plan for BattMo includes extensions to other battery chemistries (e.g. metal-air) and eventually hydrogen systems (i.e. electrolyzers and fuel cells). It provides interfaces for MATLAB, Python, and Julia, and includes an interactive web app to explore battery behavior, continuum modeling, and design optimization.",
+  "category": "simulation-and-parameterisation",
+  "subcategory": "software",
+  "link": "https://battmo.org",
+  "repository": "https://github.com/BattMoTeam",
+  "documentation": "https://battmo.org",
+  "doi": "",
+  "language": ["MATLAB", "julia", "python"],
+  "license": ["GPL-3.0", "MIT"],
+  "authors": ["SINTEF"],
+  "funding_source": ["HEU DigiBatt", "HEU IntelLiGent", "HEU BATMAX"]
+}

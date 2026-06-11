@@ -1,0 +1,149 @@
+{
+  "created": "2025-05-04T13:48:41.144456+00:00",
+  "modified": "2025-05-04T13:48:41.410528+00:00",
+  "id": 15336745,
+  "conceptrecid": "15336744",
+  "doi": "10.5281/zenodo.15336745",
+  "conceptdoi": "10.5281/zenodo.15336744",
+  "doi_url": "https://doi.org/10.5281/zenodo.15336745",
+  "metadata": {
+    "title": "Development of computational framework for non-invasive parameterization of physics-based models",
+    "doi": "10.5281/zenodo.15336745",
+    "publication_date": "2025-03-10",
+    "description": "<p>The main objective of the deliverable D5.1 is the description of the computational framework, which enables the direct extraction of physical parameters from experimental sequences, that will be formulated and optimized in T5.2. The aim of this work is to follow a non-invasive approach to reduce the need of costly cell tear-down and avoid combinations of measurement techniques which lack compatibility and which require sophisticated devices and knowledge how to interpret and analysis the complex data.&nbsp;</p>",
+    "access_right": "open",
+    "creators": [
+      {
+        "name": "Deutsches Zentrum für Luft- und Raumfahrt e. V. (DLR)",
+        "affiliation": null
+      },
+      {
+        "name": "SINTEF Industry",
+        "affiliation": null
+      },
+      {
+        "name": "Forschungszentrum Jülich",
+        "affiliation": null
+      }
+    ],
+    "resource_type": {
+      "title": "Project deliverable",
+      "type": "publication",
+      "subtype": "deliverable"
+    },
+    "license": {
+      "id": "cc-by-4.0"
+    },
+    "grants": [
+      {
+        "code": "101103997",
+        "internal_id": "10.13039/501100000780::101103997",
+        "funder": {
+          "name": "European Commission",
+          "doi": "10.13039/501100000780",
+          "acronym": "EC"
+        },
+        "title": "DIGITAL SOLUTIONS FOR ACCELERATED BATTERY TESTING",
+        "acronym": "DigiBatt",
+        "program": "HORIZON.2.5",
+        "url": "https://cordis.europa.eu/projects/101103997"
+      }
+    ],
+    "communities": [
+      {
+        "id": "digibatt"
+      },
+      {
+        "id": "eu"
+      }
+    ],
+    "relations": {
+      "version": [
+        {
+          "index": 0,
+          "is_last": true,
+          "parent": {
+            "pid_type": "recid",
+            "pid_value": "15336744"
+          }
+        }
+      ]
+    }
+  },
+  "title": "Development of computational framework for non-invasive parameterization of physics-based models",
+  "links": {
+    "self": "https://zenodo.org/api/records/15336745",
+    "self_html": "https://zenodo.org/records/15336745",
+    "preview_html": "https://zenodo.org/records/15336745?preview=1",
+    "doi": "https://doi.org/10.5281/zenodo.15336745",
+    "self_doi": "https://doi.org/10.5281/zenodo.15336745",
+    "self_doi_html": "https://zenodo.org/doi/10.5281/zenodo.15336745",
+    "reserve_doi": "https://zenodo.org/api/records/15336745/draft/pids/doi",
+    "parent": "https://zenodo.org/api/records/15336744",
+    "parent_html": "https://zenodo.org/records/15336744",
+    "parent_doi": "https://doi.org/10.5281/zenodo.15336744",
+    "parent_doi_html": "https://zenodo.org/doi/10.5281/zenodo.15336744",
+    "self_iiif_manifest": "https://zenodo.org/api/iiif/record:15336745/manifest",
+    "self_iiif_sequence": "https://zenodo.org/api/iiif/record:15336745/sequence/default",
+    "files": "https://zenodo.org/api/records/15336745/files",
+    "media_files": "https://zenodo.org/api/records/15336745/media-files",
+    "thumbnails": {
+      "10": "https://zenodo.org/api/iiif/record:15336745:D5.1_Non-invasive_parameterisation_framework_v1.0.pdf/full/%5E10,/0/default.jpg",
+      "50": "https://zenodo.org/api/iiif/record:15336745:D5.1_Non-invasive_parameterisation_framework_v1.0.pdf/full/%5E50,/0/default.jpg",
+      "100": "https://zenodo.org/api/iiif/record:15336745:D5.1_Non-invasive_parameterisation_framework_v1.0.pdf/full/%5E100,/0/default.jpg",
+      "250": "https://zenodo.org/api/iiif/record:15336745:D5.1_Non-invasive_parameterisation_framework_v1.0.pdf/full/%5E250,/0/default.jpg",
+      "750": "https://zenodo.org/api/iiif/record:15336745:D5.1_Non-invasive_parameterisation_framework_v1.0.pdf/full/%5E750,/0/default.jpg",
+      "1200": "https://zenodo.org/api/iiif/record:15336745:D5.1_Non-invasive_parameterisation_framework_v1.0.pdf/full/%5E1200,/0/default.jpg"
+    },
+    "archive": "https://zenodo.org/api/records/15336745/files-archive",
+    "archive_media": "https://zenodo.org/api/records/15336745/media-files-archive",
+    "latest": "https://zenodo.org/api/records/15336745/versions/latest",
+    "latest_html": "https://zenodo.org/records/15336745/latest",
+    "versions": "https://zenodo.org/api/records/15336745/versions",
+    "draft": "https://zenodo.org/api/records/15336745/draft",
+    "access_links": "https://zenodo.org/api/records/15336745/access/links",
+    "access_grants": "https://zenodo.org/api/records/15336745/access/grants",
+    "access_users": "https://zenodo.org/api/records/15336745/access/users",
+    "access_request": "https://zenodo.org/api/records/15336745/access/request",
+    "access": "https://zenodo.org/api/records/15336745/access",
+    "communities": "https://zenodo.org/api/records/15336745/communities",
+    "communities-suggestions": "https://zenodo.org/api/records/15336745/communities-suggestions",
+    "request_deletion": "https://zenodo.org/api/records/15336745/request-deletion",
+    "file_modification": "https://zenodo.org/api/records/15336745/file-modification",
+    "quota_increase": "https://zenodo.org/api/records/15336745/quota-increase",
+    "requests": "https://zenodo.org/api/records/15336745/requests"
+  },
+  "updated": "2025-05-04T13:48:41.410528+00:00",
+  "recid": "15336745",
+  "revision": 4,
+  "files": [
+    {
+      "id": "9cab0893-5606-4908-95c0-3c8b415d7822",
+      "key": "D5.1_Non-invasive_parameterisation_framework_v1.0.pdf",
+      "size": 2196340,
+      "checksum": "md5:f60548267b3361874d65500067fc348a",
+      "links": {
+        "self": "https://zenodo.org/api/records/15336745/files/D5.1_Non-invasive_parameterisation_framework_v1.0.pdf/content"
+      }
+    }
+  ],
+  "swh": null,
+  "owners": [
+    {
+      "id": "106757"
+    }
+  ],
+  "status": "published",
+  "stats": {
+    "downloads": 80,
+    "unique_downloads": 66,
+    "views": 115,
+    "unique_views": 115,
+    "version_downloads": 80,
+    "version_unique_downloads": 66,
+    "version_unique_views": 115,
+    "version_views": 115
+  },
+  "state": "done",
+  "submitted": true
+}
