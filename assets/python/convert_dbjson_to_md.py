@@ -1,11 +1,13 @@
 import json
 import re
 import sys
+import shutil
 from pathlib import Path
 from datetime import datetime, timezone
 
 
-CATEGORISED_DIR = Path("data/categorised")
+UNCONVERTED_DIR = Path("data/unconverted")
+CONVERTED_DIR = Path("data/converted")
 ARCHETYPES_DIR = Path("archetypes")
 CONTENT_DIR = Path("content")
 
@@ -101,14 +103,36 @@ def convert(json_path: Path, archetypes: dict):
     print(f"  Written to {out_file}")
 
 
-def main():
-    if not CATEGORISED_DIR.exists():
-        print(f"Directory '{CATEGORISED_DIR}' not found.")
+def moveconverted(json_path: Path, overwrite: bool = True):
+    """Move converted JSON file to the converted directory."""
+    
+    if not CONVERTED_DIR.exists():
+        print(f"Directory '{CONVERTED_DIR}' not found.")
         sys.exit(1)
 
-    json_files = list(CATEGORISED_DIR.rglob("*.json"))
+    converted_file = CONVERTED_DIR / json_path.name
+    
+    if converted_file.exists():
+        if not overwrite:
+            print(f"  Warning: {converted_file} already exists, skipping move")
+            return
+        else:
+            converted_file.unlink()
+            print(f"  Overwriting existing file")
+    
+    shutil.move(str(json_path), str(converted_file))
+    print(f"  Moved to {converted_file}")
+
+
+
+def main():
+    if not UNCONVERTED_DIR.exists():
+        print(f"Directory '{UNCONVERTED_DIR}' not found.")
+        sys.exit(1)
+
+    json_files = list(UNCONVERTED_DIR.rglob("*.json"))
     if not json_files:
-        print(f"No JSON files found in {CATEGORISED_DIR}")
+        print(f"No JSON files found in {UNCONVERTED_DIR}")
         sys.exit(0)
 
     archetypes = load_archetypes()
@@ -118,6 +142,7 @@ def main():
     for path in json_files:
         print(f"Processing {path.name}")
         convert(path, archetypes)
+        moveconverted(path)
 
     print(f"\nDone. {len(json_files)} records processed.")
 

@@ -4,5 +4,25 @@ Dispatches to the subcategory-specific partial so fields are displayed
 in the order defined in the corresponding schema JSON.
 Call as: {{ partial "record-single.html" . }}
 */}}
-{{- $sub := .Params.subcategory | default "other" -}}
-{{- partial (printf "record-single-%s.html" $sub) . -}}
+
+
+<div>
+
+  {{ partial "breadcrumb.html" . }}
+
+  <!-- Title -->
+  <h1 class="text-3xl font-bold text-gray-900 mb-3">{{ .Title }}</h1>
+
+  <content class="flex flex-col sm:flex-row">
+    <!-- Description -->
+    {{ with .Content }}
+      <description class="w-full text-l py-6 lg:pr-6 flex-flow">{{ . }}</description>
+    {{ end }}
+    <infopanel class="w-full py-6 flex-flow">
+      <!-- Metadata panel -->
+      {{- $sub := .Params.subcategory | default "other" -}}
+        {{- partial (printf "metadata-%s.html" $sub) . -}}
+    </infopanel>
+  </content>
+
+</div>
