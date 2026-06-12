@@ -6,8 +6,8 @@ from pathlib import Path
 from datetime import datetime, timezone
 
 
-UNCONVERTED_DIR = Path("data/unconverted")
-CONVERTED_DIR = Path("data/converted")
+UNCONVERTED_DIR = Path("data/submitted")
+CONVERTED_DIR = Path("data/accepted")
 ARCHETYPES_DIR = Path("archetypes")
 CONTENT_DIR = Path("content")
 
