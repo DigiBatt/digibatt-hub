@@ -1,3 +1,4 @@
+{{- $basePath := (urls.Parse site.BaseURL).Path -}}
 {{- $records := slice -}}
 {{- range .Site.RegularPages -}}
   {{- $record := dict
@@ -5,7 +6,7 @@
     "description" (or .Params.description "")
     "category"    (or .Params.category "")
     "subcategory" (or .Params.subcategory "")
-    "url"         .RelPermalink
+    "url"         (print $basePath (strings.TrimPrefix "/" .RelPermalink))
   -}}
   {{- $records = $records | append $record -}}
 {{- end -}}
