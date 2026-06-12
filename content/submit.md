@@ -27,7 +27,7 @@ Each record type has a JSON schema describing the expected fields. Schemas are a
 | Type | Schema |
 |---|---|
 | Software | [schemas/software.json](https://github.com/DigiBatt/digibatt-hub/blob/main/schemas/software.json) |
-| Publication | [schemas/publications.json](https://github.com/DigiBatt/digibatt-hub/blob/main/schemas/publications.json) |
-| Dataset | [schemas/datasets.json](https://github.com/DigiBatt/digibatt-hub/blob/main/schemas/datasets.json) |
-| Database | [schemas/databases.json](https://github.com/DigiBatt/digibatt-hub/blob/main/schemas/databases.json) |
-| Tutorial | [schemas/tutorials.json](https://github.com/DigiBatt/digibatt-hub/blob/main/schemas/tutorials.json) |
+| Publication | [schemas/publication.json](https://github.com/DigiBatt/digibatt-hub/blob/main/schemas/publication.json) |
+| Dataset | [schemas/dataset.json](https://github.com/DigiBatt/digibatt-hub/blob/main/schemas/dataset.json) |
+| Database | [schemas/database.json](https://github.com/DigiBatt/digibatt-hub/blob/main/schemas/database.json) |
+| Tutorial | [schemas/tutorial.json](https://github.com/DigiBatt/digibatt-hub/blob/main/schemas/tutorial.json) |
