@@ -29,12 +29,15 @@ document.querySelectorAll('.mobile-submenu-toggle').forEach(btn => {
 });
 
 // ── Search ────────────────────────────────────────────────────────────────────
+const SEARCH_INDEX_URL = document.querySelector('meta[name="search-index-url"]')?.content || '/index.json';
+const SEARCH_PAGE_URL  = document.querySelector('meta[name="search-page-url"]')?.content  || '/search/';
+
 let fuse = null;
 
 async function loadSearchIndex() {
   if (fuse) return;
   try {
-    const resp = await fetch('/index.json');
+    const resp = await fetch(SEARCH_INDEX_URL);
     if (!resp.ok) return;
     const data = await resp.json();
     fuse = new Fuse(data, {
@@ -162,7 +165,7 @@ function renderPageResults(results, container) {
 
 function navigateToSearch(query) {
   if (query.trim()) {
-    window.location.href = `/search/?q=${encodeURIComponent(query.trim())}`;
+    window.location.href = SEARCH_PAGE_URL + '?q=' + encodeURIComponent(query.trim());
   }
 }
 
