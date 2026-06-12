@@ -1,0 +1,13 @@
+{
+  "title": "Full title of the publication",
+  "category": "choose a category",
+  "subcategory": "publication",
+  "description": "Abstract or brief summary",
+  "link": "Link to publication",
+  "doi": "DOI",
+  "license": ["List", "licences"],
+  "authors": ["List", "authors"],
+  "year": 2024,
+  "publisher": "Journal name or publisher",
+  "funding_source": ["List", "funders"]
+}

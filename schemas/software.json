@@ -52,7 +52,7 @@
     "license": {
       "type": "array",
       "items": { "type": "string" },
-      "description": "Licence under which the software is published"
+      "description": "Licences under which the software is published"
     },
     "authors": {
       "type": "array",
