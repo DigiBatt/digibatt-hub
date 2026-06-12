@@ -5,7 +5,7 @@
     "description" (or .Params.description "")
     "category"    (or .Params.category "")
     "subcategory" (or .Params.subcategory "")
-    "url"         .RelPermalink
+    "url"         .Permalink
   -}}
   {{- $records = $records | append $record -}}
 {{- end -}}
