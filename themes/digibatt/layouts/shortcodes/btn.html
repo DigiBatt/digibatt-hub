@@ -1,0 +1,5 @@
+<a href="{{ .Get `href` }}" 
+   class="btn rounded-full"
+   {{ if .Get `target` }}target="{{ .Get `target` }}" rel="noopener"{{ end }}>
+  {{ .Inner }}
+</a>

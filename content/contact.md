@@ -10,7 +10,7 @@ We welcome questions, feedback and contributions from the battery modelling comm
 
 ### Submitting a Resource
 
-The quickest way to add a resource to the hub is via a GitHub Issue. Use the **Submit** link in the navigation bar, or go directly to the [submissions page](https://github.com/DigiBatt/digibatt-hub/issues/new/choose) and choose the *Submit a Record* template.
+The quickest way to add a resource to the hub is via a GitHub Issue. Go to the [submissions page](https://github.com/DigiBatt/digibatt-hub/issues/new/choose) and choose the *Submit a Record* template. If you prefer you can submit a resource as a json file via a PR to the main repo. More information can be found in the repository [README](https://github.com/DigiBatt/digibatt-hub/blob/main/README.md).
 
 ### Reporting Issues
 

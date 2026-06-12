@@ -16,10 +16,9 @@ Have a battery modelling tool, dataset, publication, database or tutorial to sha
 4. Paste a JSON object describing your resource — see the [schemas](https://github.com/DigiBatt/digibatt-hub/tree/main/schemas) for the required fields.
 5. Submit the issue. A maintainer will review and add the record.
 
-<a href="https://github.com/DigiBatt/digibatt-hub/issues/new/choose"
-   class="btn" target="_blank" rel="noopener">
+{{< btn href="https://github.com/DigiBatt/digibatt-hub/issues/new/choose" target="_blank" >}}
   Open Submission Form →
-</a>
+{{< /btn >}}
 
 ### JSON Schemas
 

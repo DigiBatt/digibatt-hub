@@ -43,6 +43,29 @@ a:hover, ddmenu:hover {
   text-decoration: underline;
 }
 
+
+.btn {
+  background-color: var(--accent-primary);
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1.25rem;
+  padding: 1.5rem 1.5rem 0.75rem 1.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.btn:hover {
+  background-color: var(--accent-secondary);
+  text-decoration: none;
+  color: white;
+}
+
+
+
 h1, h2, h3, h4, h5, h6 {
   color: var(--text-color);
   line-height: 1.2;
