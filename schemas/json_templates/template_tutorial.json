@@ -1,7 +1,7 @@
 {
   "title": "Title of the tutorial",
   "description": "Brief description of what the tutorial covers",
-  "category": "choose a category",
+  "category": ["choose", "one", "or", "more", "categories"],
   "subcategory": "tutorial",
   "link": "Link to tutorial",
   "format": "Jupyter Notebook, Video, or Written guide",

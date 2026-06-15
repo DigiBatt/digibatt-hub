@@ -16,9 +16,20 @@
       "description": "Brief description of what the software does"
     },
     "category": {
-      "type": "string",
-      "enum": ["cyclic-testing", "data-repositories", "data-standardisation", "simulation-and-parameterisation", "system-level-testing"],
-      "description": "Main category this record belongs to"
+      "oneOf": [
+        {
+          "type": "string",
+          "enum": ["cyclic-testing", "data-repositories", "data-standardisation", "simulation-and-parameterisation", "system-level-testing"]
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["cyclic-testing", "data-repositories", "data-standardisation", "simulation-and-parameterisation", "system-level-testing"]
+          }
+        }
+      ],
+      "description": "Main category or categories this record belongs to. Can be a single string or an array of category strings."
     },
     "subcategory": {
       "type": "string",
