@@ -2,7 +2,7 @@
 title = 'ECHOED: Battery Digital Twin Framework'
 date = '2026-06-15T10:46:47Z'
 draft = false
-category = 'simulation-and-parameterisation'
+category = ['simulation-and-parameterisation']
 subcategory = 'software'
 link = 'https://github.com/DigiBatt/echoed'
 repository = 'https://github.com/DigiBatt/echoed'

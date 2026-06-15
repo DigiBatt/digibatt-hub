@@ -2,7 +2,7 @@
 title = 'BDAT: Battery Data Analysis Toolkit'
 date = '2026-06-15T10:43:50Z'
 draft = false
-category = 'data-repositories'
+category = ['data-repositories']
 subcategory = 'software'
 link = 'https://pypi.org/project/bdat/'
 repository = 'https://github.com/DigiBatt/bdat'

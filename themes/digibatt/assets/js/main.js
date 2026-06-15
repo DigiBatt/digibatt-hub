@@ -58,7 +58,10 @@ async function loadSearchIndex() {
 
 function labelFor(item) {
   const parts = [];
-  if (item.category)    parts.push(item.category.replace(/-/g, ' '));
+  if (item.category) {
+    const cats = Array.isArray(item.category) ? item.category : [item.category];
+    parts.push(cats.map(c => c.replace(/-/g, ' ')).join(', '));
+  }
   if (item.subcategory) parts.push(item.subcategory.replace(/-/g, ' '));
   return parts.join(' › ');
 }
