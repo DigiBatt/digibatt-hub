@@ -35,7 +35,7 @@
         {{ $cats := .Params.category }}
         {{ if kindIs "string" $cats }}{{ $cats = slice $cats }}{{ end }}
         {{ if and (in $cats $categorySlug) (eq .Params.subcategory $sub.slug) }}
-          {{ $pages = append $page $pages }}
+          {{ $pages = $pages | append $page }}
         {{ end }}
       {{ end }}
       {{ if gt (len $pages) 0 }}
