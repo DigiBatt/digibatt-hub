@@ -108,6 +108,9 @@ Records are Markdown files with structured front matter. Each record can have mu
 
 ## Creating a new record
 
+There are some utilities available in the repo to make it easier to generate new records. 
+
+
 ### Converting .json to .md via python script.
 
 1. **Create a .json file** from the correct json template in `schemas/json_templates/`
