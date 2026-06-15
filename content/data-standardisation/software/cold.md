@@ -1,0 +1,17 @@
++++
+title = 'COLD: Constructing Ontology-based Linked Data'
+date = '2026-06-15T10:38:33Z'
+draft = false
+category = 'data-standardisation'
+subcategory = 'software'
+link = 'https://github.com/DigiBatt/cold'
+repository = 'https://github.com/DigiBatt/cold'
+documentation = 'https://digibatt.github.io/cold/'
+doi = ''
+language = ['Python', 'Jinja']
+license = ['MIT']
+authors = ['DigiBatt']
+funding_source = ['Horizon Europe DigiBatt project']
++++
+
+COLD is a Python package for generating and validating battery-related linked data. It provides tools for structuring battery metadata and test data into RDF/JSON-LD formats using an ontology-driven approach. COLD ensures that generated data adheres to well-defined ontologies, making it easy to integrate with semantic web technologies and battery digital twin ecosystems.

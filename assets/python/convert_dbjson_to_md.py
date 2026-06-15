@@ -50,8 +50,6 @@ def to_toml_value(value) -> str:
 def validate(data, subcategory):
 
     schema = "schemas/" + subcategory + ".json"
-    print(schema)
-    print("scheming")
     schemadata = json.load(open(schema))
  
     validator = Draft7Validator(schemadata)

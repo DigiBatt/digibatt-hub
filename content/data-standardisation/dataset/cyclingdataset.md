@@ -2,7 +2,7 @@
 title = 'Battery Datasets for Testing Data Pipelines and Workflow Automation'
 date = '2026-06-12T12:44:43Z'
 draft = false
-category = 'data-standardisation'
+category = ['data-standardisation', 'data-repositories']
 subcategory = 'dataset'
 link = 'https://zenodo.org/records/18986774'
 doi = 'https://doi.org/10.5281/zenodo.18986774'
