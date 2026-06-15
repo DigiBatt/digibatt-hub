@@ -33,7 +33,7 @@
       {{ range $allRecords }}
         {{ $page := . }}
         {{ $cats := .Params.category }}
-        {{ if reflect.IsMap $cats }}{{ else }}{{ $cats = slice $cats }}{{ end }}
+        {{ if not (reflect.IsSlice $cats) }}{{ $cats = slice $cats }}{{ end }}
         {{ if and (in $cats $categorySlug) (eq .Params.subcategory $sub.slug) }}
           {{ $pages = $pages | append $page }}
         {{ end }}
