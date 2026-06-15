@@ -6,7 +6,7 @@ draft = false
 
 ## Submit a Resource to the DigiBatt Hub
 
-Have a battery modelling tool, dataset, publication, database or tutorial to share? We welcome contributions from the community.
+Have an open battery modelling tool, dataset, publication, database or tutorial to share? We welcome contributions from the community.
 
 ### How to Submit
 

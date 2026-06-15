@@ -16,7 +16,7 @@ A searchable knowledge hub for battery research resources, built with [Hugo](htt
 
 ## Prerequisites
 
-- [Hugo Extended](https://gohugo.io/installation/) v0.120+
+- [Hugo](https://gohugo.io/installation/) v0.120+
 - [Node.js](https://nodejs.org/) v18+
 - npm v9+
 
@@ -27,7 +27,7 @@ A searchable knowledge hub for battery research resources, built with [Hugo](htt
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/your-org/digibatt-hub.git
+   git clone https://github.com/DigiBatt/digibatt-hub.git
    cd digibatt-hub
    ```
 
@@ -48,35 +48,14 @@ A searchable knowledge hub for battery research resources, built with [Hugo](htt
 
 ## Running Locally
 
-Start the Hugo development server with Tailwind CSS watching for changes:
+Start the Hugo development server:
 
 ```bash
-# In one terminal — watch and build Tailwind
-npm run dev
-
-# In another terminal — serve the Hugo site
+# In the terminal — serve the Hugo site
 hugo server
 ```
 
-Or, if your `package.json` has a combined script:
-
-```bash
-npm start
-```
-
 The site will be available at [http://localhost:1313](http://localhost:1313).
-
-> **Note:** Hugo must be run with the `--disableFastRender` flag if you notice stale CSS:
-> ```bash
-> hugo server --disableFastRender
-> ```
-
-### Building for Production
-
-```bash
-npm run build   # builds Tailwind CSS (minified)
-hugo --minify   # builds the static site into /public
-```
 
 ---
 
@@ -84,12 +63,13 @@ hugo --minify   # builds the static site into /public
 
 ```
 digibatt-hub/
-├── content/              # Markdown content (records, pages)
+├── content/              # Markdown content (Category pages)
 │   ├── cyclic-testing/
 │   ├── data-repositories/
 │   ├── data-standardisation/
 │   ├── simulation-and-parameterisation/
-│   └── system-level-testing/
+│   ├── system-level-testing/
+│   └── records/          # Markdown content (Record pages)
 ├── themes/digibatt/      # Custom Hugo theme (layouts, assets)
 ├── schemas/              # JSON schemas for record types
 ├── assets/python/        # Helper scripts for importing records
@@ -101,7 +81,7 @@ digibatt-hub/
 
 ## Adding New Records
 
-Records are Markdown files with structured front matter. Each record belongs to a **category** (e.g. `cyclic-testing`) and a **type** (e.g. `dataset`, `publication`, `software`, `tutorial`, `other`).
+Records are Markdown files with structured front matter. Each record can have multiple **categories** (e.g. `cyclic-testing`) and a single **type** (e.g. `dataset`, `publication`, `software`, `tutorial`, `other`).
 
 ### Option 1 — Submit via GitHub Issue (recommended for non-developers)
 
@@ -109,42 +89,51 @@ Records are Markdown files with structured front matter. Each record belongs to 
 2. Fill in the form with the resource details (title, URL, description, category, etc.).
 3. A maintainer will review and add it to the hub.
 
-### Option 2 — Submit via Pull Request
+### Option 2 — Submit .md file via Pull Request
 
 1. **Fork** the repository and create a new branch:
 
    ```bash
    git checkout -b add/my-new-record
    ```
-
-2. **Create a new content file** using a Hugo archetype:
-
-   ```bash
-   hugo new cyclic-testing/dataset/my-dataset.md
-   # or
-   hugo new data-standardisation/software/my-tool.md
-   ```
-
-3. **Edit the generated file** and fill in the front matter. Example for a dataset:
-
-   ```yaml
-   ---
-   title: "My Battery Dataset"
-   date: 2026-06-12
-   description: "A short description of the resource."
-   url: "https://doi.org/10.xxxx/xxxxx"
-   category: "cyclic-testing"
-   subcategory: "dataset"
-   tags: ["lithium-ion", "NMC"]
-   draft: false
-   ---
-   ```
-
-4. **Validate** your file against the appropriate JSON schema in `/schemas/`.
+2. Create a new .md file for the record and place it in `content/records/`
 
 5. **Preview locally** with `hugo server`.
 
 6. **Open a Pull Request** against `main`. A maintainer will review and merge it.
+
+
+
+---
+
+## Creating a new record
+
+### Converting .json to .md via python script.
+
+1. **Create a .json file** from the correct json template in `schemas/json_templates/`
+
+2. Place the file in `data/submitted/`
+
+3. **Convert to a .md file** by running `assets/python/convert_dbjson_to_md.py`
+
+This should validate against the correct schema, create a new .md file and place it into the `content/records` folder.
+
+### Creating .md file via hugo archetypes
+
+1. **Create a new file** from the correct hugo archetype (found in `archetypes/`)
+
+   ```bash
+   # e.g.
+   hugo new -k dataset records/my-dataset.md
+   # or
+   hugo new -k software records/my-tool.md
+   ```
+
+3. **Edit the generated file** and fill in the front matter and put the description in the main file content.
+
+4. **Validate** your file against the appropriate JSON schema in `/schemas/`.
+
+
 
 ---
 
@@ -166,10 +155,8 @@ JSON schemas for each record type are in the `/schemas/` directory:
 
 This project has received funding from the European Union.
 
-![Funded by the European Union](https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Flag_of_Europe.svg/320px-Flag_of_Europe.svg.png)
-
 ---
 
 ## License
 
-See [LICENSE](./LICENSE) for details.
+Website code is licenced under GPL3. See [LICENSE](./LICENSE) for details.

@@ -6,13 +6,13 @@ draft = false
 
 ## About the DigiBatt Hub
 
-The **DigiBatt Hub** is an open, community-maintained catalogue of battery modelling and data resources. It brings together software tools, research publications, datasets, databases and tutorials so that researchers and engineers working on electrochemical energy storage can discover and share knowledge in one place.
+The **DigiBatt Hub** is an open, community-maintained catalogue of digital battery testing resources. It brings together software tools, research publications, datasets, databases and tutorials so that researchers and engineers can easily discover open digital tools which can be used. 
 
 ### The DigiBatt Project
 
-DigiBatt is a European research initiative focused on digital tools and methods for battery technology. The hub is part of the project's open-science commitment — making models, data and know-how freely accessible to the global battery community.
+DigiBatt is a Horizon Europe project running from 2024 - 2026 focusing on Digital Solutions for Accelerated Battery Testing. The DigiBatt hub is part of the project's open-science commitment — making models, data and know-how freely accessible to the global battery community.
 
-Visit the main project website at [digibatt.org](https://digibatt.org) for news, consortium information and full project details.
+Visit the main project website at [digibatt.org](https://digibattproject.eu) for news, consortium information and full project details.
 
 ### Consortium
 
@@ -20,6 +20,4 @@ The DigiBatt consortium includes research institutes and industrial partners acr
 
 ### Funding
 
-This project has received funding from the European Union. Views and opinions expressed are those of the authors only and do not necessarily reflect those of the European Union or the European Commission.
-
-![EU Funding Logo](/eu-funding-logo.png)
+The DigiBatt Hub is funded by the European Union through the DigiBatt project. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or CINEA. Neither the European Union nor the granting authority can be held responsible for them.
