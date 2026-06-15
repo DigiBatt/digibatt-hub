@@ -2,7 +2,7 @@
 title = 'BattMo'
 date = '2026-06-10T11:18:21Z'
 draft = false
-category = 'simulation-and-parameterisation'
+category = ['simulation-and-parameterisation']
 subcategory = 'software'
 link = 'https://battmo.org'
 repository = 'https://github.com/BattMoTeam'

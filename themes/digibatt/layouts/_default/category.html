@@ -23,13 +23,21 @@
     (dict "slug" "other"        "name" "Other"        "icon" "📦")
   }}
 
+  {{ $categorySlug := .Section }}
+  {{ $allRecords := where site.RegularPages "Section" "records" }}
+
   <div class="flex flex-col gap-4">
     {{ range $subcategories }}
       {{ $sub := . }}
-      {{ $subURL := printf "%s%s/" $.RelPermalink $sub.slug }}
-      {{ $subPage := site.GetPage $subURL }}
       {{ $pages := slice }}
-      {{ with $subPage }}{{ $pages = .Pages }}{{ end }}
+      {{ range $allRecords }}
+        {{ $page := . }}
+        {{ $cats := .Params.category }}
+        {{ if not (reflect.IsSlice $cats) }}{{ $cats = slice $cats }}{{ end }}
+        {{ if and (in $cats $categorySlug) (eq .Params.subcategory $sub.slug) }}
+          {{ $pages = $pages | append $page }}
+        {{ end }}
+      {{ end }}
       {{ if gt (len $pages) 0 }}
         <details class="group bg-white rounded-xl shadow-sm border border-gray-200 hover:shadow-md transition-shadow duration-200" open>
           <summary class="flex items-center gap-3 cursor-pointer p-6 select-none list-none [&::-webkit-details-marker]:hidden">

@@ -2,7 +2,7 @@
 title = 'COLD: Constructing Ontology-based Linked Data'
 date = '2026-06-15T10:38:33Z'
 draft = false
-category = 'data-standardisation'
+category = ['data-standardisation']
 subcategory = 'software'
 link = 'https://github.com/DigiBatt/cold'
 repository = 'https://github.com/DigiBatt/cold'

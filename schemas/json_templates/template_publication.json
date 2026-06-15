@@ -1,6 +1,6 @@
 {
   "title": "Full title of the publication",
-  "category": "choose a category",
+  "category": ["choose", "one", "or", "more", "categories"],
   "subcategory": "publication",
   "description": "Abstract or brief summary",
   "link": "Link to publication",

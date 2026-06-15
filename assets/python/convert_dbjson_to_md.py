@@ -67,7 +67,7 @@ def convert(json_path: Path, archetypes: dict):
     with open(json_path) as f:
         data = json.load(f)
 
-    category = data.get("category", "").strip()
+    category = data.get("category", "")
     subcategory = data.get("subcategory", "").strip()
 
     if not category:
@@ -116,7 +116,7 @@ def convert(json_path: Path, archetypes: dict):
     content = "\n".join(lines) + "\n\n" + body + "\n"
 
     # Write to content/category/subcategory/slug.md
-    out_dir = CONTENT_DIR / category / subcategory
+    out_dir = CONTENT_DIR / "records"
     out_dir.mkdir(parents=True, exist_ok=True)
     out_file = out_dir / f"{slug}.md"
     out_file.write_text(content)

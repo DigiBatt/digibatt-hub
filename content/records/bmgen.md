@@ -2,7 +2,7 @@
 title = 'BMGEN: Battery Model Generator'
 date = '2026-06-15T10:43:50Z'
 draft = false
-category = 'cyclic-testing'
+category = ['cyclic-testing']
 subcategory = 'software'
 link = 'https://pypi.org/project/bm-generator/'
 repository = 'https://github.com/DigiBatt/bmgen'

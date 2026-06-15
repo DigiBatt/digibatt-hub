@@ -1,7 +1,7 @@
 {
   "title": "My resource",
   "description": "Description of resource",
-  "category": "choose a category",
+  "category": ["choose", "one", "or", "more", "categories"],
   "subcategory": "other",
   "link": "Link to webpage",
   "doi": "DOI",

@@ -1,7 +1,7 @@
 {
   "title": "BDAT: Battery Data Analysis Toolkit",
   "description": "A Python toolkit for importing, processing, and analysing electrical battery data. It provides functions for handling battery test data and integrates with Kadi4Mat while also supporting standalone workflows.",
-  "category": "data-repositories",
+  "category": ["cyclic-testing","simulation-and-parameterisation"],
   "subcategory": "software",
   "link": "https://pypi.org/project/bdat/",
   "repository": "https://github.com/DigiBatt/bdat",
