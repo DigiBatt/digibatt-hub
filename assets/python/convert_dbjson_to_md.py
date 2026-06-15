@@ -4,6 +4,7 @@ import sys
 import shutil
 from pathlib import Path
 from datetime import datetime, timezone
+from jsonschema import Draft7Validator
 
 
 UNCONVERTED_DIR = Path("data/submitted")
@@ -46,6 +47,23 @@ def to_toml_value(value) -> str:
         escaped = str(value).replace("'", "''")
         return f"'{escaped}'"
 
+def validate(data, subcategory):
+
+    schema = "schemas/" + subcategory + ".json"
+    print(schema)
+    print("scheming")
+    schemadata = json.load(open(schema))
+ 
+    validator = Draft7Validator(schemadata)
+    errors = sorted(validator.iter_errors(data), key=lambda e: e.path)
+
+    if errors:
+        for error in errors:
+            print(f"❌ Error at {list(error.path)}: {error.message}")
+            sys.exit("Invalid JSON file")
+    else:
+        print("✅ JSON is valid")
+
 
 def convert(json_path: Path, archetypes: dict):
     with open(json_path) as f:
@@ -60,6 +78,9 @@ def convert(json_path: Path, archetypes: dict):
     if not subcategory:
         print(f"  Skipping {json_path.name} — no subcategory set")
         return
+
+    # Validate against schema
+    validate(data, subcategory)
 
     # Find matching archetype
     if subcategory not in archetypes:
@@ -81,6 +102,7 @@ def convert(json_path: Path, archetypes: dict):
     lines.append("draft = false")
 
     for field in fields:
+        field = field.lower()
         val = data.get(field)
         if val is not None and val != "":
             lines.append(f"{field} = {to_toml_value(val)}")

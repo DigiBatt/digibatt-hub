@@ -13,21 +13,27 @@ Have a battery modelling tool, dataset, publication, database or tutorial to sha
 1. Click the button below (or use the **Submit** link in the navigation).
 2. Choose the **Submit a Record** issue template.
 3. Select the record type (software / publication / dataset / database / tutorial).
-4. Paste a JSON object describing your resource — see the [schemas](https://github.com/DigiBatt/digibatt-hub/tree/main/schemas) for the required fields.
+4. Paste a JSON object describing your resource — see the [schemas](https://github.com/DigiBatt/digibatt-hub/tree/main/schemas) and [json_templates](https://github.com/DigiBatt/digibatt-hub/tree/main/schemas/json_templates) for the required fields.
 5. Submit the issue. A maintainer will review and add the record.
 
 {{< btn href="https://github.com/DigiBatt/digibatt-hub/issues/new/choose" target="_blank" >}}
-  Open Submission Form →
+  Submit a resource
 {{< /btn >}}
 
 ### JSON Schemas
 
-Each record type has a JSON schema describing the expected fields. Schemas are available in the repository:
+Each record type has a JSON schema describing the expected fields. Schemas for different record types can be found here:
 
-| Type | Schema |
-|---|---|
-| Software | [schemas/software.json](https://github.com/DigiBatt/digibatt-hub/blob/main/schemas/software.json) |
-| Publication | [schemas/publication.json](https://github.com/DigiBatt/digibatt-hub/blob/main/schemas/publication.json) |
-| Dataset | [schemas/dataset.json](https://github.com/DigiBatt/digibatt-hub/blob/main/schemas/dataset.json) |
-| Database | [schemas/database.json](https://github.com/DigiBatt/digibatt-hub/blob/main/schemas/database.json) |
-| Tutorial | [schemas/tutorial.json](https://github.com/DigiBatt/digibatt-hub/blob/main/schemas/tutorial.json) |
+{{< btn href="https://github.com/DigiBatt/digibatt-hub/tree/main/schemas" target="_blank" >}}
+  Schemas
+{{< /btn >}}
+
+
+### JSON Templates
+
+JSON templates for different record types can be found here:
+
+{{< btn href="https://github.com/DigiBatt/digibatt-hub/tree/main/schemas/json_templates" target="_blank" >}}
+  Templates
+{{< /btn >}}
+
