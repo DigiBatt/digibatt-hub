@@ -54,9 +54,7 @@
                 <a href="{{ .RelPermalink }}" class="text-base font-medium text-primary hover:underline no-underline">
                   {{ .Title }}
                 </a>
-                {{ with .Params.description }}
-                  <p class="text-sm text-gray-600 mt-0.5 mb-0 leading-relaxed line-clamp-2">{{ . | truncate 150 }}</p>
-                {{ end }}
+                <p class="text-sm text-gray-600 py-1 mt-0.5 mb-0 leading-relaxed line-clamp-2">{{ .Content | truncate 200 }}</p>
               </li>
             {{ end }}
           </ul>
