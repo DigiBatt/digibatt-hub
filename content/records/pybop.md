@@ -1,0 +1,17 @@
++++
+title = 'PyBOP'
+date = '2026-06-18T11:38:19Z'
+draft = false
+category = 'simulation-and-parameterisation'
+subcategory = 'software'
+link = 'https://pypi.org/project/pybop/'
+repository = 'https://github.com/pybop-team/PyBOP'
+documentation = 'https://pybop-docs.readthedocs.io/'
+doi = '10.21105/joss.07874'
+language = ['Python']
+license = ['BSD 3-Clause']
+authors = ['Brady Planden', 'Nicola E. Courtier', 'Martin Robinson', 'Agriya Khetarpal', 'Ferran Brosa Planella', 'David A. Howey']
+funding_source = ['The Faraday Institution', 'UKRI', 'IntelLiGent', 'DigiBatt']
++++
+
+Python Battery Optimisation and Parameterisation: an open-source Python package for parameterisation and optimisation of battery models.
